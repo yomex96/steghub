@@ -22,7 +22,7 @@ I used Ubuntu Linux for this project. The first step was setting up a virtual ma
 sudo apt update
 sudo apt upgrade
 
-### 2. Apache Setup
+### 3. Apache Setup
 Apache was installed using the following command:
 
 ```bash
@@ -32,7 +32,19 @@ sudo systemctl start apache2
 
 ## Verify Apache2 Status
 
+```bash
 sudo systemctl status apache2
 
- ### 3.  Install MySQL
+### 4. Install MySQL
+ ```
+ sudo apt install mysql-server
+
+ sudo systemctl start mysql 
+
+sudo systemctl enable mysql
+
+
+
+
+
 
