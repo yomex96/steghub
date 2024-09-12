@@ -21,6 +21,8 @@ I used Ubuntu Linux for this project. The first step was setting up a virtual ma
 ```bash
 sudo apt update
 sudo apt upgrade
+```
+
 
 ### 3. Apache Setup
 Apache was installed using the following command:
