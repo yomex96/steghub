@@ -48,6 +48,27 @@ sudo systemctl status apache2
 sudo systemctl enable mysql
 ```
 
+## Log into mysql
+```
+sudo mysql
+```
+## Password for root user 
+```
+ALTER USER 'root'@'localhost' IDENTIFIED BY 'new_password';
+```
+
+## After installation, the database was secured using:
+```
+sudo mysql_secure_installation
+```
+
+
+
+
+### 5. Install MySQL
+
+
+
 
 
 
