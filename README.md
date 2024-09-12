@@ -62,10 +62,12 @@ ALTER USER 'root'@'localhost' IDENTIFIED BY 'new_password';
 sudo mysql_secure_installation
 ```
 
+## Log back to console
+```
+exit
+```
 
-
-
-### 5. Install MySQL
+### 5. PHP Installation
 
 
 
