@@ -148,6 +148,11 @@ phpinfo();
 ```
 sudo rm /var/www/html/index.php
 ```
+### 7. Linkedin post 
+[My LinkedIn Post on LAMP Stack](https://www.linkedin.com/posts/abayomi-robert-onaawole_lamp-mysql-php-activity-7239876642544750592-hNNA?utm_source=share&utm_medium=member_desktop)
+
+
+
 
 
 
