@@ -68,6 +68,13 @@ exit
 ```
 
 ### 5. PHP Installation
+```
+sudo apt install php libapache2-mod-php php-mysql
+```
+## Verify php
+```
+php -v
+```
 
 
 
