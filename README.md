@@ -75,6 +75,83 @@ sudo apt install php libapache2-mod-php php-mysql
 ```
 php -v
 ```
+## Setup Apache Configuration for Project
+```
+sudo mkdir /var/www/projectlamp
+sudo chown -R $USER:$USER /var/www/projectlamp
+```
+## Configure Apache Virtual Host
+
+# Edit the Apache configuration file:
+```
+sudo vi  /etc/apache2/sites-available/projectlamp.conf
+```
+# Add the following content to the file:
+```
+<VirtualHost *:80>
+    ServerAdmin webmaster@localhost
+    ServerName projectlamp
+    ServerAlias www.projectlamp
+    DocumentRoot /var/www/projectlamp
+    ErrorLog ${APACHE_LOG_DIR}/error.log
+    CustomLog ${APACHE_LOG_DIR}/access.log combined
+</VirtualHost>
+```
+## Verify Configuration File in Sites-Available
+```
+Sudo ls  /etc/c/projectlamp.conf
+```
+# Enable new virtual host 
+```
+sudo a2ensite projectlamp
+```
+# Disable the default virtual host 
+```
+sudo a2dissite 000-default.conf
+```
+# Test the Configuration
+```
+sudo apache2ctl configtest
+```
+## Restart apache2
+```
+sudo systemctl restart apache2
+```
+
+## Enable php on the website
+```
+sudo vi  /etc/apache2/mods-enabled/dir.conf
+```
+# Ensure the file contains the following:
+```
+<IfModule mod_dir.c>
+    DirectoryIndex index.php index.html index.cgi index.pl index.xhtml index.htm
+</IfModule>
+```
+## Reload apache2
+```
+sudo systemctl restart apache2
+```
+### Test PHP Setup
+```
+sudo vi  /var/www/html/index.php
+```
+## Add the following content to the file:
+```
+<?php
+phpinfo();
+?>
+```
+### 6. Verify PHP in Browser
+
+## Access the file via your browser to confirm PHP is working, then remove the test file:
+```
+sudo rm /var/www/html/index.php
+```
+
+
+
+
 
 
 
