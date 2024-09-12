@@ -31,11 +31,12 @@ Apache was installed using the following command:
 sudo apt install apache2
 sudo systemctl enable apache2
 sudo systemctl start apache2
-
+```
 ## Verify Apache2 Status
 
 ```bash
 sudo systemctl status apache2
+```
 
 ### 4. Install MySQL
  ```
@@ -44,6 +45,7 @@ sudo systemctl status apache2
  sudo systemctl start mysql 
 
 sudo systemctl enable mysql
+```
 
 
 
