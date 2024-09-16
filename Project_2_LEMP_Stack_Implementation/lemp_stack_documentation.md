@@ -44,7 +44,7 @@ The LEMP stack garners popularity in web development for several compelling reas
 
 __1.__ EC2 Instance of t2.micro type and Ubuntu 24.04 LTS (HVM) was lunched in the region of my choosing using the AWS console.
 
-![Lunch Instance](/img/lemp_in.png)
+![Lunch Instance](img/lemp_in.png)
 ![Lunch Instance](/img/ec2_instance_details.png)
 
 __2.__ Created SSH key pair named __lempServer__ to access the instance on port 22.
