@@ -45,11 +45,11 @@ The LEMP stack garners popularity in web development for several compelling reas
 __1.__ EC2 Instance of t2.micro type and Ubuntu 24.04 LTS (HVM) was lunched in the region of my choosing using the AWS console.
 
 ![Lunch Instance](img/lemp_in.png)
-![Lunch Instance](/img/ec2_instance_details.png)
+![Lunch Instance](img/ec2_instance_details.png)
 
 __2.__ Created SSH key pair named __lempServer__ to access the instance on port 22.
 
-![Lunch Instance](/img/Lemp-Key-pair.png)
+![Lunch Instance](img/Lemp-Key-pair.png)
 
 __3.__ The security group was configured with the following inbound rules:
 
@@ -85,7 +85,7 @@ __8.__ After applying these fixes, try SSH-ing into the server again.
 ssh -i Lemp-Server.pem ubuntu@54.172.190.153
 ```
 
-![Launch Git Bash](/img/git_bash_launch.png)
+![Launch Git Bash](img/git_bash_launch.png)
 
 ## Step 1 - Install the Nginx Web Server
 
@@ -95,18 +95,18 @@ sudo apt update
 sudo apt install nginx
 ```
 
-![nginx_update](/img/nginx_update.png)
+![nginx_update](img/nginx_update.png)
 
 
 __2.__ __Install server's package index__
 
-![nginx_launch](/img/nginx_install.png)
+![nginx_launch](img/nginx_install.png)
 
 __3.__ __Verify that nginx was successfuly installed__
 ```
 sudo systemctl status nginx
 ```
-![nginx_status_check](/img/nginx_status.png)
+![nginx_status_check](img/nginx_status.png)
 
 **Note:** If it's green and running, you've followed all the steps correctly. Congratulations, you've just launched your first web server in the cloud!
 
@@ -117,7 +117,7 @@ curl http://localhost:80
 OR
 curl http://127.0.0.1:80
 ```
-![Local URL](/img/default_curl_page.png)
+![Local URL](img/default_curl_page.png)
 
 __5.__ __Test whether the Nginx server can respond to requests from the internet by testing it with the public IP address using the URL in a web browser.__
 ```
@@ -132,19 +132,19 @@ __6.__ __An alternative method to obtain the public IP address is by means other
 curl -s http://169.254.169.254/latest/meta-data/public-ipv4
 ```
 After running the command above, there was an error __401 - Unauthorized__ output.
-![Unauthorized Error](/img/unathorized_curl.png)
+![Unauthorized Error](img/unathorized_curl.png)
 In troubleshooting this error, the following navigation was made from the ec2 instance page on the AWS console:
 
 - Actions > Instance Settings > Modify instance metadata options.
 - Then change the __IMDSv2__ from __Required__ to __Optional__.
-![imds option](/img/imd_optional.png)
+![imds option](img/imd_optional.png)
 
 The command was run again, this time there was no error with the public IP address displayed.
 
 ```
 curl -s http://169.254.169.254/latest/meta-data/public-ipv4
 ```
-![public ip with curl](/img/public_ip_curl.png)
+![public ip with curl](img/public_ip_curl.png)
 
 ## Step 2 - Install MySQL
 
@@ -154,7 +154,7 @@ MySQL was installed in this project. It is a popular relational database managem
 ```
 sudo apt install mysql-server
 ```
-![Install MySQL](/img/install_mysql.png)
+![Install MySQL](img/install_mysql.png)
 When prompted, install was confirmed by typing y and then Enter.
 
 __2.__ __Enable and verify that mysql is running with the commands below__
@@ -162,7 +162,7 @@ __2.__ __Enable and verify that mysql is running with the commands below__
 sudo systemctl enable --now mysql
 sudo systemctl status mysql
 ```
-![MySQL_Status_Check](/img/mysql_status.png)
+![MySQL_Status_Check](img/mysql_status.png)
 
 __3.__ __Log in to mysql console__
 ```
@@ -170,7 +170,7 @@ sudo mysql
 ```
 This connects to the MySQL server as the administrative database user __root__ infered by the use of __sudo__ when running the command.
 
-![mysql_login](/img/mysql_login.png)
+![mysql_login](img/mysql_login.png)
 
 __4.__ __Set a password for root user using mysql_native_password as default authentication method.__
 
@@ -178,7 +178,7 @@ Here, the user's password was defined as "PassWord.1"
 ```
 ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'PassWord.1';
 ```
-![User Password](/img/mysql_login_password.png)
+![User Password](img/mysql_login_password.png)
 
 Exit the MySQL shell
 ```
@@ -190,7 +190,7 @@ The security script is pre-installed with MySQL. It's designed to eliminate cert
 ```
 sudo mysql_secure_installation
 ```
-![mysql_secure_installation](/img/mysql_secure.png)
+![mysql_secure_installation](img/mysql_secure.png)
 
 Regardless of whether the **VALIDATION PASSWORD PLUGIN** is configured, the server will prompt you to choose and confirm a password for the MySQL root user.
 
@@ -200,7 +200,7 @@ After executing the command below, a command prompt for entering a password was 
 ```
 sudo mysql -p
 ```
-![mysql_password_test](/img/mysql_password_access.png)
+![mysql_password_test](img/mysql_password_access.png)
 
 Exit MySQL shell
 ```
@@ -222,13 +222,13 @@ The following were installed:
 ```
 sudo apt install php-fpm php-mysql
 ```
-![mysql_password_test](/img/php_installation.png)
+![mysql_password_test](img/php_installation.png)
 
 Confirm the PHP version
 ```
 php -v
 ```
-![Confirm php version](/img/php_installation_confirmation.png)
+![Confirm php version](img/php_installation_confirmation.png)
 
 ## Step 4 - Configuring Nginx to Use PHP Processor
 
@@ -240,19 +240,19 @@ Created the root web directory for **your_domain** **** using "mkdir" command
 ```
 sudo mkdir /var/www/projectLEMP
 ```
-![root_directory](/img/projectLEMP_root_directory.png)
+![root_directory](img/projectLEMP_root_directory.png)
 
 __2.__ Then assign ownership of the directory with the $USER environment  variable, which will reference the current systen user 
 ```
 sudo chown -R $USER:$USER /var/www/projectLEMP
 ```
-![user_ownership](/img/ownership_$user.png)
+![user_ownership](img/ownership_$user.png)
 
 __3.__ Open a new configuration file in Nginx's ***sites-avilable*** directory using ypour preffered command-line editor. Here, I'll use ***nano*** 
 ```
 sudo nano /etc/nginx/sites-available/projectLEMP
 ```
-![blankpage](/img/blankpage.png)
+![blankpage](img/blankpage.png)
 
 his will create a blank file> Paste in the following bare-bone configuration:  
 ```
@@ -280,7 +280,7 @@ server {
 
 }
 ```
-![blankpage](/img/bare_bone_configuration.png)
+![blankpage](img/bare_bone_configuration.png)
 
 **Note:** After making changes in the editor, you can save the file by pressing Ctrl + O, then press Enter to confirm the filename, and finally Ctrl + X to exit nano.
 
@@ -294,7 +294,7 @@ __4.__ Test your configuration for syntax errors by typing:
 ```
 sudo nginx -t
 ```
-![Test Syntax Error](/img/nginx.conf_syntax.png)
+![Test Syntax Error](img/nginx.conf_syntax.png)
 
 __5.__ Disable default Nginx host that is currently configured to listen on port 80, for this run:
 ```
@@ -304,13 +304,13 @@ __6.__ Reload Nginx to apply changes:
 ```
 sudo systemctl reload nginx
 ```
-![Test Syntax Error](/img/reload_nginx.png)
+![Test Syntax Error](img/reload_nginx.png)
 
 __7.__ Your new website is now active, but the web root /var/www/projectLEMP is still empty. Create an index.html file in that location so that we can test that your new server block works as expected:
 ```
 sudo echo 'Hello LEMP from hostname' $(curl -s http://169.254.169.254/latest/meta-data/public-hostname) 'with public IP' $(curl -s http://169.254.169.254/latest/meta-data/public-ipv4) > /var/www/projectLEMP/index.html
 ```
-![index html page](/img/index.html_page.png)
+![index html page](img/index.html_page.png)
 
 __8.__  Now go to your browser and access your server’s domain name or IP address, as listed within the server_name directive in your server block configuration file:
 
@@ -321,7 +321,7 @@ or
 
 http://ec2-54-172-190-153.compute-1.amazonaws.com:80
 ```
-![broswer home](/img/browser_home.png)
+![broswer home](img/browser_home.png)
 
 
 ## Step 5 –Testing PHP with Nginx
@@ -341,7 +341,7 @@ Type or paste the following lines into the new file. This is valid PHP code that
 <?php
 phpinfo();
 ```
-![php_index](/img/projectLEMP_index.html_info.php.png)
+![php_index](img/projectLEMP_index.html_info.php.png)
 
 __2.__You can now access this page in your web browser by visiting the domain name or public IP address you’ve set up in your Nginx configuration file, followed by /info.php:
 
@@ -350,14 +350,14 @@ http://54.172.190.153/info.php
 or 
 serverdomain/info.php
 ```
-![php_homepage](/img/php_home_page.png)
+![php_homepage](img/php_home_page.png)
 
 __3.__ After reviewing the pertinent details of your PHP server via that page, it's advisable to delete the file you generated since it harbors sensitive information regarding your PHP setup and your Ubuntu server. To accomplish this, you can utilize the `rm` command to delete the file.
 
 ```
 sudo rm /var/www/projectLEMP/info.php
 ```
-![php_homepage](/img/php_rm.png)
+![php_homepage](img/php_rm.png)
 ## Step 6 — Retrieving data from MySQL database with PHP
 
 __1.__ First, connect to the MySQL console using the root account:
@@ -365,26 +365,26 @@ __1.__ First, connect to the MySQL console using the root account:
 ```
 sudo mysql -u root -p
 ```
-![mysql_database](/img/mysql_database.png)
+![mysql_database](img/mysql_database.png)
 
 __2.__ To create a new database, run the following command from your MySQL console:
 
 ```
 mysql> CREATE DATABASE steghub_DB;
 ```
-![mysql_database](/img/create_database-steghub.png)
+![mysql_database](img/create_database-steghub.png)
 
 __2.__The following command creates a new user named ***example_user***, using mysql_native_password as default authentication method. We’re defining this user’s password as password, but you should replace this value with a secure password of your own choosing.
 
 ```
 mysql> CREATE USER 'fiyo_user'@'%' IDENTIFIED WITH mysql_native_password BY 'PassWord.1';
 ```
-![mysql_database](/img/create_mysql_user.png)
+![mysql_database](img/create_mysql_user.png)
 
 ```
 mysql> GRANT ALL ON steghub_DB.* TO 'fiyo_user'@'%';
 ```
-![mysql_database](/img/mysql_grant_all.png)
+![mysql_database](img/mysql_grant_all.png)
 
 __3.__  Exit the MySQL shell with:
 
@@ -397,13 +397,13 @@ __4.__  You can test if the new user has the proper permissions by logging in to
 ```
 mysql -u fiyo_user -p
 ```
-![mysql_database](/img/fiyo_user.png)
+![mysql_database](img/fiyo_user.png)
 
 __5.__ Confirm that you have access to the steghub_DB database:
 ```
 mysql> SHOW DATABASES;
 ```
-![show_databases](/img/show_databases.png)
+![show_databases](img/show_databases.png)
 
 __6.__ 1’ll create a test table named todo_list. From the MySQL console, run the following statement:
 
@@ -414,7 +414,7 @@ mysql> content VARCHAR(255),
 mysql> PRIMARY KEY(item_id)
 );
 ```
-![create to-do-list](/img/create_to_do_list.png)
+![create to-do-list](img/create_to_do_list.png)
 
 __7.__ Insert a few rows of content in the test table. You might want to repeat the next command a few times, using different values:
 ```
@@ -423,7 +423,7 @@ mysql> INSERT INTO steghub_DB.todo_list (content) VALUES ("My second important i
 mysql> INSERT INTO steghub_DB.todo_list (content) VALUES ("My third important item");
 mysql> INSERT INTO steghub_DB.todo_list (content) VALUES ("My fourth important item");
 ```
-![insert_into_Steghub_DB](/img/insert_into_Steghub_DB.png)
+![insert_into_Steghub_DB](img/insert_into_Steghub_DB.png)
 
 __8.__To confirm that the data was successfully saved to your table, run:
 
@@ -443,7 +443,7 @@ Output
 +---------+--------------------------+
 4 rows in set (0.00 sec)
 ```
-![confirm](/img/confirm_todolist.png)
+![confirm](img/confirm_todolist.png)
 
 __9.__ After confirming that you have valid data in your test table, you can exit the MySQL console:
 ```
@@ -489,7 +489,7 @@ __11.__ You can now access this page in your web browser by visiting the domain 
 http://54.172.190.153/todo_list.php
 ```
 
-![php](/img/php_todolist.png)
+![php](img/php_todolist.png)
 
 #### That means your PHP environment is ready to connect and interact with your MySQL server
 
