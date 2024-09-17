@@ -57,11 +57,11 @@ __3.__ The security group was configured with the following inbound rules:
 - Allow traffic on port 443 (HTTPS) with source from anywhere on the internet.
 - Allow traffic on port 22 (SSH) with source from any IP address. This is opened by default.
 
-![Security Rules](/img/securitygroup.png)
+![Security Rules](img/securitygroup.png)
 
 __4.__ The default VPC and Subnet was used for the networking configuration.
 
-![EC2 Network](/img/EC2_network.png)
+![EC2 Network](img/EC2_network.png)
 
 __5.__ Launched Git Bash and ran the following command:
 ```
@@ -70,7 +70,7 @@ ssh -i Lemp-Server.pem ubuntu@54.172.190.153
 ```
 __6.__ Permission Denied.The warning about the permissions of the private key file ****(Lemp-Server.pem)**** indicates that its permissions are too open. SSH requires strict permissions for private key files for security reasons. 
 
-![Permission Denied](/img/Permission%20denied.png)
+![Permission Denied](img/Permission%20denied.png)
 
 __7.__ To fix this, you need to change the permissions of the private key file. Run the following command in your terminal:
 
