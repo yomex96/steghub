@@ -77,7 +77,7 @@ __7.__ To fix this, you need to change the permissions of the private key file. 
 ```
 chmod 600 Lemp-Server.pem
 ```
-![Permission change](/img/permission_change.png)
+![Permission change](img/permission_change.png)
 
 __8.__ After applying these fixes, try SSH-ing into the server again.
 
