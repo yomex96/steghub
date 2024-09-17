@@ -493,6 +493,46 @@ http://54.172.190.153/todo_list.php
 
 #### That means your PHP environment is ready to connect and interact with your MySQL server
 
+---
+
+### Challenges and How I Overcame Them in LEMP Stack Implementation
+
+Throughout the process of setting up the LEMP stack, I encountered several challenges, each requiring a unique approach to resolve:
+
+#### 1. **Permission Denied During SSH Connection**
+   - **Challenge:** After launching my EC2 instance and attempting to SSH into it, I received a "Permission Denied" error when using the `.pem` file for authentication.
+   - **Solution:** This issue occurred due to improper file permissions for the private key. To resolve it, I modified the permissions of the `.pem` file using the following command:
+     ```bash
+     chmod 600 Lemp-Server.pem
+     ```
+     This command restricted access to the private key file, ensuring it was secure enough to be used for SSH.
+
+#### 2. **Unauthorized Error When Fetching Public IP**
+   - **Challenge:** While attempting to retrieve the public IP of my EC2 instance using metadata, I encountered a `401 Unauthorized` error.
+   - **Solution:** The issue arose due to the instance requiring IMDSv2 (Instance Metadata Service Version 2). By navigating to the EC2 console and modifying the instance metadata options, I set IMDSv2 to "Optional" instead of "Required." After making this change, the metadata query succeeded.
+
+#### 3. **Nginx Configuration Errors**
+   - **Challenge:** After configuring the server block for my domain, I faced an issue where Nginx was not serving the intended site.
+   - **Solution:** Upon running `nginx -t`, I discovered syntax errors in the configuration file. I revisited the file, corrected the mistakes, and re-tested it. Once the configuration passed the syntax test, I reloaded Nginx to apply the changes:
+     ```bash
+     sudo systemctl reload nginx
+     ```
+     This ensured the proper application of my server block settings.
+
+#### 4. **MySQL Root User Authentication**
+   - **Challenge:** Setting up MySQL, I faced difficulties authenticating the `root` user. The default authentication method did not work as expected.
+   - **Solution:** To resolve the issue, I explicitly changed the authentication method for the `root` user to use `mysql_native_password`, which allowed me to set a password and authenticate successfully:
+     ```sql
+     ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'PassWord.1';
+     ```
+     This secured the MySQL root user with a password and ensured the database was accessible as intended.
+
+#### 5. **Indexing and Testing PHP Setup**
+   - **Challenge:** After installing PHP and setting up Nginx, PHP pages were not being served correctly.
+   - **Solution:** I verified that PHP-FPM was properly installed and configured by adding the correct fastcgi parameters in the Nginx server block. Once I confirmed the configuration, I created a test `index.php` file to verify that PHP processing was functional. This step confirmed the correct integration of PHP with Nginx.
+
+Each of these challenges was part of the learning experience, reinforcing the importance of understanding permissions, configurations, and server setup nuances when working with web stacks like LEMP.
+
 ## Conclusion
 
 We've established a versatile base for delivering PHP websites and applications to your audience, leveraging Nginx as the web server and MySQL as the database system.<br><br>
