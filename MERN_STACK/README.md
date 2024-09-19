@@ -1,4 +1,4 @@
-## LEMP Stack Implementation in AWS
+## MERN Stack Implementation in AWS
 
 ### Overview:
 
