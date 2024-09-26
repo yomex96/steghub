@@ -298,7 +298,7 @@ const Todo = mongoose.model('todo', TodoSchema);
 
 module.exports = Todo;
 ```
-![vim_tod.js](/img/vim_todo_js.png)
+![vim_tod.js](images/vim_todo_js.png)
 
 __4.__ Now, we need to update our routes in api.js to make use of the new model.
 
@@ -445,14 +445,14 @@ app.listen(port, () => {
 });
 ```
 <br></br>
-![node](/img/reflect.env.png)
+![node](images/reflect.env.png)
 
 __8.__  Start Nodejs Server
 
 ```bash
 node index.js
 ```
-![node](/img/server_running.png)
+![node](images/server_running.png)
 
 ## Step 5 - Test Backend Code without Frontend using RESTful API
 
@@ -460,7 +460,7 @@ So far we have written backend part of out  **To-Do** application, and configure
 
 __1.__  You'll need to install [Postman](https://www.getpostman.com) or you can use VScode Extension called ThunderClient. 
 
-![postman](/img/postman_home.png)
+![postman](images/postman_home.png)
 
 Next, we open send an API request, and create a POST request to our API(make sure your server is running on your terminal)
 
@@ -576,15 +576,15 @@ npm run dev
 ```
 
 
-![run_dev](/img/run_dev.png)
+![run_dev](images/run_dev.png)
 
 _Your app will be open and running on PublicIP:3000_
 
 _Enusre you open port 3000 in your AWS Security group_
 
-![3000_securitygroup](/img/3000_securityG.png)
+![3000_securitygroup](images/3000_securityG.png)
 
-![scr](/img/src:app.js.png)
+![scr](images/src:app.js.png)
 
 ## Step 7 — Creating the React Components
 
@@ -855,7 +855,7 @@ li {
   }
 }
 ```
-![img](/img/App.css_edit.png)
+![img](images/App.css_edit.png)
 
 __7.__ In the src directory, open the  `index.css`
 
