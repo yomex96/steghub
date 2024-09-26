@@ -227,7 +227,7 @@ __2.__ Change directory to `routes` folder.
 ```
 $ cd routes 
 ```
-![directory_route](/img/routes_directories.png)
+![directory_route](images/routes_directories.png)
 
 __3.__ Create a file `api.js` and open the file then write the code below.
 ```
