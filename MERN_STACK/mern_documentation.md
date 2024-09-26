@@ -27,13 +27,13 @@ MERN lets us create full-stack solutions. So, to leverage its full potential, we
 ## Step 0: Prerequisites
 
 __1.__ EC2 Instance of t3.small type and Ubuntu 24.04 LTS (HVM) was lunched in the region of my choosing using the AWS console.
-![Lunch Instance](/img/mern_stack_Launch.png)
-![Lunchdetails](/img/mernstackdetails.png)
+![Lunch Instance](/images/mern_stack_Launch.png)
+![Lunchdetails](/images/mernstackdetails.png)
 
 
 __2.__ Created SSH key pair named __mernstack__ to access the instance on port 22.
 
-![keypair](/img/keypair%208.04.44%20AM.png)
+![keypair](/images/keypair%208.04.44%20AM.png)
 
 __3.__ The security group was configured with the following inbound rules:
 
@@ -41,11 +41,11 @@ __3.__ The security group was configured with the following inbound rules:
 - Allow traffic on port 443 (HTTPS) with source from anywhere on the internet.
 - Allow traffic on port 22 (SSH) with source from any IP address. This is opened by default.
 
-![Security Rules](/img/securitygroup.png)
+![Security Rules](/images/securitygroup.png)
 
 __4.__ The default VPC and Subnet was used for the networking configuration.
 
-![EC2 Network](/img/mern_network.png)
+![EC2 Network](/images/mern_network.png)
 
 __5.__ Launched Git Bash and ran the following command:
 ```
@@ -53,46 +53,46 @@ ssh -i mernstack.pem ubuntu@44.211.247.36
 
 ```
 __6.__ Permission Denied.The warning about the permissions of the private key file ****(Lemp-Server.pem)**** indicates that its permissions are too open. SSH requires strict permissions for private key files for security reasons. 
-![Permission Denied](/img/permission_denied.png)
+![Permission Denied](/images/permission_denied.png)
 
 _7.__ To fix this, you need to change the permissions of the private key file. Run the following command in your terminal:
 
 ```
 chmod 600 mernstack.pem
 ```
-![Permission change](/img/permission_changed.png)
+![Permission change](/images/permission_changed.png)
 
 __8.__ After applying these fixes, try SSH-ing into the server again.
 
 ```
 ssh -i mernstack.pem ubuntu@44.211.247.36
 ```
-![Launch Git Bash](/img/ssh.png)
+![Launch Git Bash](/images/ssh.png)
 
 ## Step 1 - BackEnd Configuration
 __1.__ __Update ubuntu__
 ```
 sudo apt update
 ```
-![update ubuntu](/img/update_ubuntu.png)
+![update ubuntu](/images/update_ubuntu.png)
 
 __2.__ __Upgrade ubuntu__
 ```
 sudo apt upgrade
 ```
-![upgrade ubuntu](/img/ubuntu_upgrade.png)
+![upgrade ubuntu](/images/ubuntu_upgrade.png)
 
 __3.__ __location of Node.js__
 ```
 curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
 ```
-![location_](/img/location_nodejs.png)
+![location_](/images/location_nodejs.png)
 
 __4.__ Install Node.js on the server
 ```
 sudo apt-get install -y nodejs
 ```
-![install_nodejs](/img/install_nodejs.png)
+![install_nodejs](/images/install_nodejs.png)
 
 __5.__ Verify the node installation with the command 
 ```
@@ -100,7 +100,7 @@ node -v
 or 
 npm -v
 ```
-![verify_node](/img/nodejs_verification.png)
+![verify_node](/images/nodejs_verification.png)
 
 ### Application Code Setup
 
@@ -108,20 +108,20 @@ __6.__ Create a new directory for your To-Do project
 ```
 $ mkdir Todo
 ```
-![directory_todo](/img/directory_todo.png)
+![directory_todo](/images/directory_todo.png)
 
 __7.__ Verify the **Todo** directory is created with ***ls*** commond
 ```
 $ ls
 ```
-![directory_confirmed](/img/directory_confirm.png)
+![directory_confirmed](/images/directory_confirm.png)
 **Tip**: In order to see some more useful information about files and directories, you can use following combination of keys *ls-lih-*. It will show you different properties and size in human readable format. You can learn more anout different useful keys for ls comman with *ls--help*
 
 __8.__ Change your current directory to the newly created one
 ```
 $ cd Todo
 ```
-![create_todo](/img/cd_todo.png)
+![create_todo](/images/cd_todo.png)
 
 __9.__ Initialise the project 
 
