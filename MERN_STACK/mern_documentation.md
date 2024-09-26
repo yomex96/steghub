@@ -907,7 +907,6 @@ Open in the browser http//publicIP:3000
 
 ![todolist](images/todolist_test.png)
 
-## You have just created a simple To-Do and deployed it to MERN Stack.You wrote a frotend application using React.js that communicated with a backened application writte using Expressjs.You also created a Mongodb backend for storing tasks in a database.
 
 ### Challenges and Solutions in MERN Stack Implementation
 
@@ -922,5 +921,7 @@ Open in the browser http//publicIP:3000
 ### Conclusion
 
 In this project, I successfully implemented a full-stack To-Do application using the MERN stack (MongoDB, Express.js, React.js, and Node.js). Throughout the process, I tackled challenges such as setting up MongoDB, managing asynchronous operations, and handling API requests. By leveraging powerful tools like `axios` for HTTP requests, `mongoose` for database interaction, and `concurrently` for running both frontend and backend simultaneously, I was able to create a fully functional application. This project provided valuable experience in managing state, routing, and database connectivity in a modern web development environment.
+
+## You have just created a simple To-Do and deployed it to MERN Stack.You wrote a frotend application using React.js that communicated with a backened application writte using Expressjs.You also created a Mongodb backend for storing tasks in a database.
 
 
