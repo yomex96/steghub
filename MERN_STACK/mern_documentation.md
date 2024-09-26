@@ -28,7 +28,7 @@ MERN lets us create full-stack solutions. So, to leverage its full potential, we
 
 __1.__ EC2 Instance of t3.small type and Ubuntu 24.04 LTS (HVM) was lunched in the region of my choosing using the AWS console.
 ![Lunch Instance](images/mern_stack_Launch.png)
-![Lunchdetails](/images/mernstackdetails.png)
+![Lunchdetails](images/mernstackdetails.png)
 
 
 __2.__ Created SSH key pair named __mernstack__ to access the instance on port 22.
