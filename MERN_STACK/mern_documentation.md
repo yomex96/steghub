@@ -260,7 +260,7 @@ router.delete('/todos/:id', (req, res, next) => {
 
 module.exports = router;
 ```
-![POST_GET](/img/routers.png)
+![POST_GET](images/routers.png)
 <br> </br>
 
 ## Step 3 - Define the Models
@@ -274,7 +274,7 @@ __1.__ Install `mongoose`
 ```
 npm install mongoose
 ```
-![install_mongoose](/img/install_mongoose.png)
+![install_mongoose](images/install_mongoose.png)
 
 __2.__ Create a new folder in your root directory and name it `models`. Inside it create a file and name it `todo.js` with the following code in it:
 
@@ -348,13 +348,13 @@ Todo.findOneAndDelete({"_id": req.params.id})
 module.exports = router;
                     
 ```
-![vim_api.js_edit](/img/api.js_edit.png)
+![vim_api.js_edit](images/api.js_edit.png)
 
 ## Step 4 - Connecting to a Database
 
 __1.__ [Sign Up](https://www.mongodb.com/products/try-free/platform/atlas-signup-from-mlab)  to mongoDB
    
-  ![vim_api_edit](/img/mongoDB%20home%20page.png)
+  ![vim_api_edit](images/mongoDB%20home%20page.png)
 
 __2.__  Create a cluster, select AWS as the cloud provider and choose a region near you. 
 
@@ -362,23 +362,23 @@ __2.__  Create a cluster, select AWS as the cloud provider and choose a region n
 
 __3.__ Then your Cluster is created.
 
-![mongo_](/img/mongo_cluster.png)
+![mongo_](images/mongo_cluster.png)
 
 __4.__  Create a user and give it admin access. Click on `database Access` on the left sidebar.
 
-![mongos_admin](/img/admin_mongoDB.png)
+![mongos_admin](images/admin_mongoDB.png)
 
 __5.__ Click on `Browse collection`, to create a database.
 
-![mongoDB_DB](/img/mongoDB_Database.png)
+![mongoDB_DB](images/mongoDB_Database.png)
 
 __5.__ Edit your IP Access List Entry to anywhere to access your database
 
-![mongoDB_DB](/img/mongoose_nextworkaccess.png)
+![mongoDB_DB](images/mongoose_nextworkaccess.png)
 
 __6.__ Click `Connect` to connect your Database with a Driver. Select `mongoose` and copy the `Connection strings` 
   <br></br>
-![mongoose_connect](/img/connect_mern-stack_mongoose.png)
+![mongoose_connect](images/connect_mern-stack_mongoose.png)
 
 
 
@@ -388,7 +388,7 @@ __7.__ Create a file in the `Todo` directory and name it `.env`
 $ touch .env
 
 ```
-![mongos_admin](/img/env_directory.png)
+![mongos_admin](images/env_directory.png)
 
 __7.__ Open the file with vim editor
 
@@ -479,13 +479,13 @@ POST publicIP:5000/api/todos/
   "action": "Database is to be connected"
 }
 ```
-![post](/img/postman.png)
+![post](images/postman.png)
 ```
 {
   "action": "Ensuring Database is updated"
 }
 ```
-![post](/img/post%202.png)
+![post](images/post%202.png)
 
 __3.__ To list all the POST request, we run the GET method
 
@@ -497,14 +497,14 @@ GET publicIP:5000/api/todos/
   "action": "Database is confirmed"
 }
 ```
-![post](/img/get_postman.png)
+![post](images/get_postman.png)
 
 __4.__  To Delete a specific POST require, we run this on the DELETE method
 
 ```
 Delete publicIP:5000/api/todos/<id>
 ```
-![post](/img/delete_postman.png)
+![post](images/delete_postman.png)
 
 ## STEP 6 - Create the FrontEnd
 
@@ -516,7 +516,7 @@ __1.__  Run this command
 ```
 npx create-react-app client
 ```
-![Client](/img/client_folder.png)
+![Client](images/client_folder.png)
 
 __2.__ Install concurrently 
 Concurrently is used to run more than one command simultaneously from the same terminal window. 
@@ -524,7 +524,7 @@ Concurrently is used to run more than one command simultaneously from the same t
 ```
 npm install concurrently --save-dev
 ```
-![concurrently](/img/concurentlly_install.png)
+![concurrently](images/concurentlly_install.png)
 
 __3.__ Install nodemon 
 Nodemon is used to run the server and monitor it as well. If there is any change in the server code, Nodemon will restart it automatically with the new changes.
@@ -532,7 +532,7 @@ Nodemon is used to run the server and monitor it as well. If there is any change
 ```
 npm install nodemon --save-dev
 ```
-![nodemon](/img/nodemon_install.png)
+![nodemon](images/nodemon_install.png)
 
 __4.__Configure nodemon in the package.json in the `Todo `directory
 
@@ -552,7 +552,7 @@ Paste this in the Scripts block:
   // ...
 }
 ```
-![json_package](/img/package.json.png)
+![json_package](images/package.json.png)
 
 __4.__ Configure Proxy in package.json located in the `Client` directory.
 
@@ -569,7 +569,7 @@ then add
   "proxy": "http://localhost:5000"
 }
 ```
-![proxy](/img/proxy_added.png)
+![proxy](images/proxy_added.png)
 
 ***NOTE:*** The whole purpose of adding the proxy configuration in number 3 above is to make it possible to access the application directly from the browser by simply calling the server url like http://localhost:5000 rather than always including the entire path like http://localhost:5000/api/todos.
 
@@ -665,7 +665,7 @@ Then run
 ```
 npm install axios
 ```
-![js_edit](/img/install_axios.png)
+![js_edit](images/install_axios.png)
 
 __3.__ Go back to the component directory
 
@@ -762,7 +762,7 @@ const App = () => {
 
 export default App;
 ```
-![](/img/edit_app.js.png)
+![](images/edit_app.js.png)
 
 __6.__ In the src directory, open the  `App.css`
 
