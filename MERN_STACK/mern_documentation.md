@@ -1,7 +1,3 @@
-Sure! Here's the updated `documentation.md` with the new image paths:
-
----
-
 # WEB STACK IMPLEMENTATION (MERN STACK) IN AWS
 
 ### INTRODUCTION:
