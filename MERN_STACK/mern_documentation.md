@@ -354,7 +354,7 @@ __1.__ [Sign Up](https://www.mongodb.com/products/try-free/platform/atlas-signup
 
 __2.__  Create a cluster, select AWS as the cloud provider and choose a region near you. 
 
-![vim_api_edit](/img/mongoDB.png)
+![vim_api_edit](images/mongoDB.png)
 
 __3.__ Then your Cluster is created.
 
@@ -469,7 +469,7 @@ __2.__  Create a POST method  and navigate to `http://publicIP:5000/api/todos.` 
 ```
 POST publicIP:5000/api/todos/
 ```
-![postman](/img/post_ipaddress.png)
+![postman](images/post_ipaddress.png)
 ```
 {
   "action": "Database is to be connected"
@@ -648,7 +648,7 @@ class Input extends Component {
 
 export default Input
 ```
-![js_edit](/img/js_edit.png)
+![js_edit](images/js_edit.png)
 
 _To make use of axios, which is a Promise-based HTTP client for the browser and Node.js, you will need to navigate to your client directory from your terminal:_
 
@@ -726,7 +726,7 @@ class Todo extends Component {
 export default Todo;
 ```
 
-![img](/img/todo.js_edit.png
+![img](images/todo.js_edit.png
 )
 
 __5.__ Adjust the React code by Deleting the logo and adjust `App.js` to look like this:
