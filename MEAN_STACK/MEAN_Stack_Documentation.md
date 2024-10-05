@@ -453,5 +453,9 @@ http://server-public-ip:3000
 ```
 ![isbn_webpage](/img/isbn_web_page.png)
 ![isbn_webpage](/img/isbn_list.png)
+
+
+
+
 ## Conclusion
 Congratulations! We've accomplished the setup and deployment of a basic Book Registration web form using the MEAN stack. This application empowers you to effortlessly add, view, and remove books from a MongoDB database via a user-friendly web interface built with AngularJS.
