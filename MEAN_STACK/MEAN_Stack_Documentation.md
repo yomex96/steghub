@@ -32,7 +32,7 @@ For this project, we are going to implement a simple Book Register web form usin
 # Step 0: Prerequisites
 
 __1.__ EC2 Instance of t2.micro family type and Ubuntu 24.04 LTS (HVM) was lunched in the region of my choosing using the AWS console.
-![ec2_launch](/img/EC2_Launch.png)
+![ec2_launch](/images/EC2_Launch.png)
 ![ec2_launch_details](/img/EC2_details.png)
 
 __2.__ Created SSH key pair named __mernstack__ to access the instance on port 22.
