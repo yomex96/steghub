@@ -72,7 +72,7 @@ __7.__ After applying these fixes, try SSH-ing into the server again.
 ```
 ssh -i MeanStack.pem ubuntu@52.87.177.181
 ```
-![ssh_connected](/img/ssh_connected.png)
+![ssh_connected](images/ssh_connected.png)
 
 ## Step 1 - BackEnd Configuration
 
@@ -80,26 +80,26 @@ __1.__ Install ubuntu
 ```
 sudo apt update
 ```
-![ubuntu_update](/img/NodeJs_install.png)
+![ubuntu_update](images/NodeJs_install.png)
 
 __2.__ Upgrade ubuntu
 ```
 sudo apt upgrade
 ```
-![buntu_upgrade](/img/ubuntu_upgrade.png)
+![buntu_upgrade](images/ubuntu_upgrade.png)
 
 
 __3.__ Locate the Node.js software from [Ubuntu repositories](https://github.com/nodesource/distributions#deb).
 ```
 curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
 ```
-![buntu_upgrade](/img/locade_nodejs.png)
+![buntu_upgrade](images/locade_nodejs.png)
 
 __4.__ Install Node.js on the server
 ```
  sudo apt-get install nodejs -y
 ```
-![nodejs_installation](/img/node_installation.png)
+![nodejs_installation](images/node_installation.png)
 
 _The above command installs both nodejs and npm(node modules)_
 
@@ -108,7 +108,7 @@ __5.__ Verify the node installation with the command
 ```
 node -v
 ```
-![nodejs_installation](/img/nodejs_verify.png)
+![nodejs_installation](images/nodejs_verify.png)
 
 ## Step 2. Install MongoDB
 
@@ -119,26 +119,26 @@ From a terminal, install gnupg and curl if they are not already available:
 ```bash
 wget -qO - https://www.mongodb.org/static/pgp/server-6.0.asc | sudo apt-key add -
 ```
-![import_key](/img/import_KeY.png)
+![import_key](images/import_KeY.png)
 
 ```bash
 sudo apt-get install gnupg curl
 ```
-![](/img/install_gnupg.png)
+![](images/install_gnupg.png)
 
 - Create a List-File
 
 ```bash
 echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/6.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-6.0.list
 ```
-![img](/img/create%20a%20list_file.png)
+![img](images/create%20a%20list_file.png)
 
 - Once completed, ensure to reload your system to activate the changes and add the MongoDB repository. Please note that this process may require some time to complete.
   
   ```bash
   sudo apt-get update
   ```
-![update_img](/img/sudo_update.png)
+![update_img](images/sudo_update.png)
 
 - Install the packages needed for the MongoDB version you want to run. In most cases, it is a good idea to select the current version of MongoDB. 
   
@@ -163,21 +163,21 @@ sudo apt-get install -y mongodb-org=6.0.1 mongodb-org-database=6.0.1 mongodb-org
 sudo systemctl start mongod
 sudo systemctl status mongod
 ```
-![img](/img/mongod_status_start.png)
+![img](images/mongod_status_start.png)
 
 __2.__  Install node package
 
 ```bash 
 sudo apt install -y npm 
 ```
-![img](/img/install_npm.png)
+![img](images/install_npm.png)
 
 __3.__ Install body-parser package
 
 ```bash 
 sudo npm install body-parser
 ```
-![img](/img/body_parser_package.png)
+![img](images/body_parser_package.png)
 
 __4.__ Create a folder named `Books`
 
@@ -189,7 +189,7 @@ __5.__  In the `Books` directory, initialize npm project
 ```bash
 npm init
 ```
-![img](/img/book_init.png)
+![img](images/book_init.png)
 
 __6.__ Add a file to it named server.js
 
@@ -217,7 +217,7 @@ __1.__ Install Express & Mongoose
 sudo npm install express 
 sudo apt install mongoose
 ```
-![](/img/express_mongoose_install.png)
+![](images/express_mongoose_install.png)
 
 __2.__ In `Books` directory create a folder named *apps*
 
@@ -271,7 +271,7 @@ module.exports = function(app){
 };
 ```
 
-![](/img/routes.js.png)
+![](images/routes.js.png)
 
 __4.__ In the  `models` folder, createa folder named  `models` 
 
@@ -301,7 +301,7 @@ var Book = mongoose.model('Book', bookSchema);
 module.exports = mongoose.model('Book', bookSchema);
 
 ```
-![](/img/book.js.png)
+![](images/book.js.png)
 
 ## Step 3 - Access the routes with AngularJs
 
@@ -372,7 +372,7 @@ app.controller('myCtrl', function($scope, $http) {
     };
 });
 ```
-![img](/img/script.js.png)
+![img](images/script.js.png)
 
 __3.__ In the `public` folder, create a file named   `index.html` 
 
@@ -432,7 +432,7 @@ then copy and past the code inside
     </body>
 </html>
 ```
-![index](/img/index.html.png)
+![index](images/index.html.png)
 
 __4.__  Change the directory back to `Books`
 
@@ -444,15 +444,15 @@ __5.__ Start the server by running this command
 ```bash
 node server.js
 ```
-![](/img/node%20server..png)
+![](images/node%20server..png)
 
 __6.__ Access the Book Register web application from the internet with a browser using:
 
 ```bash
 http://server-public-ip:3000
 ```
-![isbn_webpage](/img/isbn_web_page.png)
-![isbn_webpage](/img/isbn_list.png)
+![isbn_webpage](images/isbn_web_page.png)
+![isbn_webpage](images/isbn_list.png)
 
 
 
