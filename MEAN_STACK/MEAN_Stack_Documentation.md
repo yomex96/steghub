@@ -33,11 +33,11 @@ For this project, we are going to implement a simple Book Register web form usin
 
 __1.__ EC2 Instance of t2.micro family type and Ubuntu 24.04 LTS (HVM) was lunched in the region of my choosing using the AWS console.
 ![ec2_launch](images/EC2_Launch.png)
-![ec2_launch_details](/img/EC2_details.png)
+![ec2_launch_details](images/EC2_details.png)
 
 __2.__ Created SSH key pair named __mernstack__ to access the instance on port 22.
 
-![ec2_keypair](/img/meanstack_keypair.png)
+![ec2_keypair](images/meanstack_keypair.png)
 
 __3.__ The security group was configured with the following inbound rules:
 
@@ -45,11 +45,11 @@ __3.__ The security group was configured with the following inbound rules:
 - Allow traffic on port 443 (HTTPS) with source from anywhere on the internet.
 - Allow traffic on port 22 (SSH) with source from any IP address. This is opened by default.
 
-![Security Rules](/img/meanstack_SG.png)
+![Security Rules](images/meanstack_SG.png)
 
 __4.__ The default VPC and Subnet was used for the networking configuration.
 
-![EC2 Network](/img/meanstack_Network.png)
+![EC2 Network](images/meanstack_Network.png)
 
 __5.__ Launched Git Bash and ran the following command:
 ```
@@ -58,14 +58,14 @@ ssh -i MeanStack.pem ubuntu@52.87.177.181
 ```
  Permission Denied.The warning about the permissions of the private key file ****(MeanStack.pem)**** indicates that its permissions are too open. SSH requires strict permissions for private key files for security reasons. 
 
-![Permission Denied](/img/ssh_permission_denied.png)
+![Permission Denied](images/ssh_permission_denied.png)
 
 __6.__ To fix this, you need to change the permissions of the private key file. Run the following command in your terminal:
 
 ```
 chmod 600 MeanStack.pem
 ```
-![Permission change](/img/ssh_permission_added.png)
+![Permission change](images/ssh_permission_added.png)
 
 __7.__ After applying these fixes, try SSH-ing into the server again.
 
