@@ -451,7 +451,8 @@ __6.__ Access the Book Register web application from the internet with a browser
 ```bash
 http://server-public-ip:3000
 ```
-
+![isbn_webpage](images/isbn_web_page.png)
+![isbn_webpage](images/isbn_list.png)
 
 
 
