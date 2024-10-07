@@ -37,7 +37,8 @@ __1.__ EC2 Instance of t2.micro family type and Ubuntu 24.04 LTS (HVM) was lunch
 
 __2.__ Created SSH key pair named __mernstack__ to access the instance on port 22.
 
-![ec2_keypair](images/meanstack_keypair.png)
+![ec2_keypair](/images/meanstack_keypair.png)
+
 
 __3.__ The security group was configured with the following inbound rules:
 
