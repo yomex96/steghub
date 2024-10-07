@@ -33,7 +33,7 @@ For this project, we are going to implement a simple Book Register web form usin
 
 __1.__ EC2 Instance of t2.micro family type and Ubuntu 24.04 LTS (HVM) was lunched in the region of my choosing using the AWS console.
 ![ec2_launch](images/EC2_Launch.png)
-![ec2_launch_details](images/EC2_details.png)
+
 
 __2.__ Created SSH key pair named __mernstack__ to access the instance on port 22.
 
@@ -93,7 +93,7 @@ __3.__ Locate the Node.js software from [Ubuntu repositories](https://github.com
 ```
 curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
 ```
-![buntu_upgrade](images/locade_nodejs.png)
+
 
 __4.__ Install Node.js on the server
 ```
@@ -163,7 +163,7 @@ sudo apt-get install -y mongodb-org=6.0.1 mongodb-org-database=6.0.1 mongodb-org
 sudo systemctl start mongod
 sudo systemctl status mongod
 ```
-![img](images/mongod_status_start.png)
+
 
 __2.__  Install node package
 
