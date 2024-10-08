@@ -40,7 +40,7 @@ __3.__ The security group was configured with the following inbound rules:
 
 __4.__ The default VPC and Subnet was used for the networking configuration.
 
-![EC2 Network](images/meanstack_Network.png)
+
 
 __5.__ Launched Git Bash and ran the following command:
 ```
@@ -49,7 +49,7 @@ ssh -i MeanStack.pem ubuntu@52.87.177.181
 ```
  Permission Denied.The warning about the permissions of the private key file ****(MeanStack.pem)**** indicates that its permissions are too open. SSH requires strict permissions for private key files for security reasons. 
 
-![Permission Denied](images/ssh_permission_denied.png)
+
 
 __6.__ To fix this, you need to change the permissions of the private key file. Run the following command in your terminal:
 
