@@ -62,7 +62,7 @@ __7.__ After applying these fixes, try SSH-ing into the server again.
 ```
 ssh -i MeanStack.pem ubuntu@52.87.177.181
 ```
-![ssh_connected](images/ssh_connected.png)
+
 
 ## Step 1 - BackEnd Configuration
 
