@@ -14,16 +14,6 @@ The MEAN stack is a JavaScript-based framework for developing scalable web appli
   
 - Node(.js): The premier JavaScript web server used to build scalable network applications.
 
-### Advantages of the MEAN stack
-MEAN applications can be used in many ways with a cross-platform write-once approach. While MEAN is particularly suited to real-time applications, particularly those running natively in the cloud and single-page (dynamic) web applications built in Angular.js, it can be used for other use cases, such as:
-
-- Workflow management tools.
-  
-- News aggregation sites.
-  
-- Todo and calendar applications.
-  
-- Interactive forums.
 
 
 ### Setting up the project
@@ -66,7 +56,6 @@ __6.__ To fix this, you need to change the permissions of the private key file. 
 ```
 chmod 600 MeanStack.pem
 ```
-![Permission change](images/ssh_permission_added.png)
 
 __7.__ After applying these fixes, try SSH-ing into the server again.
 
