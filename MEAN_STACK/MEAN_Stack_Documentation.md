@@ -179,7 +179,7 @@ __5.__  In the `Books` directory, initialize npm project
 ```bash
 npm init
 ```
-![img](images/book_init.png)
+
 
 __6.__ Add a file to it named server.js
 
