@@ -16,7 +16,7 @@ __2.__ On `mysql server` install MySQL server software
 sudo apt-get update
 sudo apt-get install mysql-server
 ```
-![mysql_instances](/img/mysql_server_installation.png)
+![mysql_instances](images/mysql_server_installation.png)
 
 __3.__ On `mysql client` Linux Server install MySQL client software.
 
@@ -25,19 +25,19 @@ sudo apt-get update
 sudo apt-get install mysql-client
 ```
 
-![mysql_instances](/img/install_client.png)
+![mysql_instances](images/install_client.png)
 
 
 __4.__ Use  `mysql server's` local IP address to connect from `mysql client.` MySQL sever uses `TCP PORT 3306 ` by default. Hence, add a new in `Inbound rule` in `mysql server`
 
-![server_SG](/img/Server_SG.png)
+![server_SG](images/Server_SG.png)
 
 __5.__ On mysql server, Edit the mysql configuration file to allow remote connections; replace 127.0.0.1 to 0.0.0.0
 
 ```bash
 sudo vi /etc/mysql/mysql.conf.d/mysqld.cnf
 ```
-![server_SG](/img/mysql_config.png)
+![server_SG](images/mysql_config.png)
 
 __6.__ From `mysql client` Linux Server connect remotely to `mysql server` Database Engine without using ssh. You must use the mysql utility to perform this action. We do this by:
 
@@ -73,7 +73,7 @@ FLUSH PRIVILEGES;
 Exit the MySQL prompt:
 Type exit to `exit` the MySQL prompt.
 
-![mysql](/img/toremoteconnection.png)
+![mysql](images/toremoteconnection.png)
 
 __7.__ Connect from the MySQL Client:
 On the Linux server with the MySQL client, use the `mysql` utility to connect remotely to the MySQL server database engine. Use the appropriate connection parameters as follows:
@@ -81,14 +81,14 @@ On the Linux server with the MySQL client, use the `mysql` utility to connect re
 ```bash
  mysql -h <remote_mysql_server_ip> -u <username> -p
 ```
-![remote_Connection](/img/remote_connection.png)
+![remote_Connection](images/remote_connection.png)
 
 __8.__ Check that you have successfully connected to a remote MySQL server and can perform SQL queries:
 
 ```bash
 Show databases;
 ```
-![show_database](/img/show_database.png)
+![show_database](images/show_database.png)
 
 __8.__ To ensure functionality, let's utilize the MySQL client to create and drop databases and tables, and to insert and select records from them.
 
@@ -128,7 +128,7 @@ SELECT * FROM users;
 exit
 ```
 
-![database_test](/img/test_database.png)
+![database_test](images/test_database.png)
 
 ## Congratulations!
 You have sucessfully deployed a fully functional MySQL Client-Server set up.
