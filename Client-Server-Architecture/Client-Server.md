@@ -73,7 +73,7 @@ FLUSH PRIVILEGES;
 Exit the MySQL prompt:
 Type exit to `exit` the MySQL prompt.
 
-![mysql](images/toremoteconnection.png)
+
 
 __7.__ Connect from the MySQL Client:
 On the Linux server with the MySQL client, use the `mysql` utility to connect remotely to the MySQL server database engine. Use the appropriate connection parameters as follows:
