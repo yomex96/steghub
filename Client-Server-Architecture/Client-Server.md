@@ -130,5 +130,19 @@ exit
 
 ![database_test](images/test_database.png)
 
+## Challenges I Faced & How I Overcame Them:
+
+## Configuring Remote Access for MySQL 🔐
+Challenge: By default, MySQL only allows local connections. I needed to enable remote access so that the client could connect to the server over the network.
+Solution: I edited the MySQL configuration file on the server (/etc/mysql/mysql.conf.d/mysqld.cnf) to listen on all IP addresses by changing bind-address from 127.0.0.1 to 0.0.0.0. I also added a security group rule to allow traffic on port 3306. This opened the MySQL service to connections from the client server.
+
+## Managing Firewall & Security Group Rules 🛡️
+Challenge: Ensuring the MySQL server allowed traffic from the client’s IP while keeping it secure was tricky.
+Solution: I created a specific inbound rule in AWS to allow MySQL traffic (port 3306) from the MySQL client’s private IP address only, rather than opening it to all IPs. This kept the server secure while allowing legitimate connections.
+
+## Setting Up Remote User Access 👥
+Challenge: MySQL users are usually set up to connect locally. Creating a remote user required specific permissions.
+Solution: I used the GRANT command to give the client machine permission to access MySQL remotely and gave the user specific privileges for database operations. I then flushed the privileges to ensure the changes took effect immediately.
+
 ## Congratulations!
 You have sucessfully deployed a fully functional MySQL Client-Server set up.
