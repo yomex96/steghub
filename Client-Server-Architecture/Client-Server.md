@@ -8,7 +8,7 @@ __1.__ Create and configure two Linux-base virtual servers (EC2 instances in AWS
 
 `Server B name -  'mysql client'`
 
-![mysql_instances](/img/instances.png)
+![mysql_instances](/imagesg/instances.png)
 
 __2.__ On `mysql server` install MySQL server software
 
