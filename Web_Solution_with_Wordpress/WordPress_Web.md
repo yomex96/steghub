@@ -394,4 +394,11 @@ Discourage search engines from indexing this site:
 ![wp_setup_complete
 ](images/WP_Setup_Complete.png)
 
+## Key Takeaways from This Project
+
+Scalable Architecture: By using AWS EC2, EBS, and LVM, I created a scalable infrastructure that can handle growing traffic and data efficiently.
+Seamless Data Management: Logical volumes helped in managing data across web and database servers, improving backup and storage allocation.
+Efficient Resource Usage: Setting up web and database servers separately ensured that resource usage could be optimized based on the specific requirements of each server.
+WordPress Setup on AWS: The end-to-end WordPress installation is secure, scalable, and built to handle real-world website deployment scenarios.
+
 **In this documentation, we've mastered the process of creating and linking EBS volumes to our instance, partitioning and establishing logical volumes to house our WordPress website. Furthermore, we've successfully crafted a WordPress site, stored its files on our Apache web server, and hosted the database on a separate server, allowing us to remotely access it.**
