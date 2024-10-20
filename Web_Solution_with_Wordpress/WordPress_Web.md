@@ -50,7 +50,7 @@ lsblk
 ```
 **NOTE:** Notice names of your newly created devices.
 
-![lsblk](images/lsblk_terminal.png)
+
 
 __3.__  See all mounts and free space on your server by running the following command:
 ```bash
