@@ -284,7 +284,7 @@ sudo chcon -t httpd_sys_rw_content_t /var/www/html/wordpress -R
 
 sudo setsebool -P httpd_can_network_connect=1
 ```
-![](images/php_wordpress.jpg)
+
 
 ![](images/apache_install.jpg)
 
