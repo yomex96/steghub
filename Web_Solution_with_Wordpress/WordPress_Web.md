@@ -7,7 +7,7 @@ __2.__ The security group for both instances was configured with the following i
 - Allow traffic on port 80 (HTTP) with source from anywhere on the internet.
 - Allow traffic on port 22 (SSH) with source from any IP address. This is opened by default.
   
-  ![](/img/EC2_instances.png)
+  ![](images/EC2_instances.png)
 
 # Step 1: Prepare a Web Server
 
@@ -23,7 +23,7 @@ Configure the volume:
  - Availability Zone: Same as the  EC2 instances we created.
 - Click **Create Volume**.
   
-   ![ebs_volume](/img/ebs_volume.png)
+   ![ebs_volume](images/ebs_volume.png)
 
 **NOTE:** Repeat the above steps to create 2 more volumes.
 
@@ -34,8 +34,8 @@ Configure the volume:
 4. Click **Attach**.
 5. Repeat the above steps to attach the other two volumes to the server instance using device names `/dev/sdc` and `/dev/sdd`.
 
-![Attach_Volume](/img/Attach_Volume.png)
-![attach_volume_outcome](/img/attach_volume_outcome.png)
+![Attach_Volume](images/Attach_Volume.png)
+![attach_volume_outcome](images/attach_volume_outcome.png)
 
 # Step 2: Connect to the Instances and Prepare Volumes
 
@@ -50,13 +50,13 @@ lsblk
 ```
 **NOTE:** Notice names of your newly created devices.
 
-![lsblk](/img/lsblk_terminal.png)
+![lsblk](images/lsblk_terminal.png)
 
 __3.__  See all mounts and free space on your server by running the following command:
 ```bash
 df -h
 ```
-![](/img/see-free%20space.png)
+![](images/see-free%20space.png)
 
 __4.__ Use `gdisk` to create a single partition on each of the 3 disks
 
