@@ -70,33 +70,33 @@ sudo gdisk /dev/nvme1n1
 - Press Enter to accept the default first sector.
 - Press Enter to accept the default last sector, using the entire disk.
 - Type w to write the changes and exit.
-![partition1](/img/partition_1.png)
+![partition1](images/partition_1.png)
 
 
 ```bash
 sudo gdisk /dev/nvme2n1
 ```
-![partition2](/img/Partition_2.png)
+![partition2](images/Partition_2.png)
 
 
 ```bash
 sudo gdisk /dev/nvme3n1
 ```
-![partition3](/img/Partition_3.png)
+![partition3](images/Partition_3.png)
 
 __5.__ Use `lsblk` utility to view the newly configured partition on each of the 3 disks.
 
 ```bash
 lsblk
 ```
-![veiw_all_partition](/img/partition_viewall.png)
+![veiw_all_partition](images/partition_viewall.png)
 
 __6.__ Install `lvm2` package. Lvm2 is used for managing disk drives and other storage devices
 
 ```bash
 sudo yum install lvm2
 ```
-![install lvn2](/img/install_lvm2_Package.png)
+![install lvn2](images/install_lvm2_Package.png)
 
 __7.__ Use the `pvcreate` utility tool to mark each of the volumes as physical volumes to be used by LVM
 
@@ -106,13 +106,13 @@ sudo pvcreate /dev/nvme2n1p1
 sudo pvcreate /dev/nvme3n1p1
 ```
 
-![pvcreate_physical_volume](/img/pvcreate_physical-volume.png)
+![pvcreate_physical_volume](images/pvcreate_physical-volume.png)
 
 __8.__ Verify that the physical volume has been created by running 
 ```bash
 sudo pvs
 ```
-![](/img/pvs_verification.png)
+![](images/pvs_verification.png)
 
 __9.__ Use `vgcreate` utility to add all 3 PVs to a volume group. Name the VG `webdata-vg`
 ```bash
@@ -122,7 +122,7 @@ __10.__ Verify that your `VG` has been created sucessfully by running
 ```bash
 sudo vgs
 ```
-![](/img/volume_group_created.png)
+![](images/volume_group_created.png)
 
 __11.__ Create 2 logical volumes, name one app-lv and the other logs-lv. For app-lv, use half of the disk size, then use the remaining part fpor the logs-lv
 ```bash
@@ -131,14 +131,14 @@ sudo lvcreate -n logs-lv -L 14G webdata-vg
 ```
 __12.__ Verify that the logical volumes has been created
 
-![logical_volume](/img/logical_volume_created.png)
+![logical_volume](images/logical_volume_created.png)
 
 __13.__ Verify the entire setup to be sure all has been configured properly
 ```bash
 sudo vgdisplay -v #view complete setup - VG, PV, and LV 
 sudo lsblk 
 ```
-![vgdisplay_](/img/volume_display.png)
+![vgdisplay_](images/volume_display.png)
 
 __14.__ Use `mkfs.ext4` to format the logical format with `ext4`filesystem.
 
@@ -146,7 +146,7 @@ __14.__ Use `mkfs.ext4` to format the logical format with `ext4`filesystem.
 sudo mkfs -t ext4 /dev/webdata-vg/apps-lv
  sudo mkfs -t ext4 /dev/webdata-vg/logs-lv
 ```
-![](/img/format_logicalvolume.png)
+![](images/format_logicalvolume.png)
 
 __15.__ Create `/var/www/html` directory to store website files
 ```bash
@@ -157,7 +157,7 @@ __16.__ Create `/home/recovery/logs` directory to store backup of log data
 ```bash
 sudo mkdir -p /home/recovery/logs
 ```
-![directories-](/img/directories.png)
+![directories-](images/directories.png)
 
 __17.__ Mount `/var/www/html` on `apps-lv`logical volume
 ```bash
@@ -168,7 +168,7 @@ __18.__ Use `rsync `Utility to backup all the files in the log directory `/var/l
 ```bash
 sudo rsync -av /var/log/ /home/recovery/logs/
 ```
-![M_B](/img/mount_&_backup.png)
+![M_B](images/mount_&_backup.png)
 
 __19.__ Mount the .var/logs on the log-lv
 ```bash
@@ -179,19 +179,19 @@ __20.__  Restore log files back ito `/var/log `  directory
 ```bash
 sudo rsync -av /home/recovery/logs/ /var/log
 ```
-![M&R](/img/mount&restore_log.png)
+![M&R](images/mount&restore_log.png)
 
 __21.__ Update `/etc/fstab` file so that the mount configuration will persist after restart of the server. The UUID of the device will be used to update the `/etc/fstab` file.
 ```bash
 sudo blkid
 ```
-![update_fstab](/img/update_fstab.png)
+![update_fstab](images/update_fstab.png)
 
 ```bash
 sudo vi /etc/fstab
 ```
 Update /etc/fstab in this format using your own UUID and remember to remove the leading and ending quotes.
-![sudo_fstab](/img/sudo_fstab.png)
+![sudo_fstab](images/sudo_fstab.png)
 
 __22.__ Test the configuration and reload the daemon
 ```bash
@@ -203,7 +203,7 @@ __22.__ Verify your setup by running `df h`, output must look like this:
 ```bash
 df -h
 ```
-![](/img/df%20-h.png)
+![](images/df%20-h.png)
 
 ### STEP 2: Prepare the Database Server
 Now, we're ready to install and configure the MySQL server, which will act as the database for our website on the server instance. To accomplish this, we'll replicate the process we used for the server instance, including creating an EC2 instance, attaching the three EBS volumes, and SSHing into the instance to create partitions.
@@ -215,13 +215,13 @@ __1.__ Update the repositiory
 ```bash
 sudo yum -y update
 ```
-![](/img/yum_update.png)
+![](images/yum_update.png)
 
 __2.__ Install wget, Apache and it's dependencies
 ```bash
 sudo yum -y install wget httpd php php-mysqlnd php-fpm php-json
 ```
-![installApache](/img/install_apache.png)
+![installApache](images/install_apache.png)
 
 __3.__ Enable and start Apache
 ```bash
@@ -229,7 +229,7 @@ sudo systemctl enable httpd
 sudo systemctl start httpd
 ```
 
-![start_apache](/img/enable_start_apache.png)
+![start_apache](images/enable_start_apache.png)
 
 __4.__ Install PHP and it's dependencies.
 
@@ -242,7 +242,7 @@ __4.__ Install PHP and it's dependencies.
     sudo systemctl start php-fpm
     sudo systemctl enable php-fpm setsebool -P httpd_execmem 1
 ```
-![](/img/PHP_Installation.png)
+![](images/PHP_Installation.png)
 
 __5.__ Restart Apache
 ```bash
@@ -262,7 +262,7 @@ Write the following code to chek the php configuration
 ```
 __7.__ Vist your IPaddress/info.php
 
-![](/img/homepage_php.png)
+![](images/homepage_php.png)
 
 __8.__ Download and Copy wordpress to the /var/www/html directory
 ```bash
@@ -285,9 +285,9 @@ sudo chcon -t httpd_sys_rw_content_t /var/www/html/wordpress -R
 
 sudo setsebool -P httpd_can_network_connect=1
 ```
-![](/img/php_wordpress.jpg)
+![](images/php_wordpress.jpg)
 
-![](/img/apache_install.jpg)
+![](images/apache_install.jpg)
 
 __10.__ Install and configure mysql server on your DB ec2 instance
 
@@ -295,7 +295,7 @@ __10.__ Install and configure mysql server on your DB ec2 instance
 sudo yum -y update
 sudo yum install mysql-server
 ```
-![](/img/db_mysql_server.jpg)
+![](images/db_mysql_server.jpg)
 
 __11.__ Verify that the service is up and running
 
@@ -324,7 +324,7 @@ FLUSH PRIVILEGES;
 
 SHOW DATABASES;
 ```
-![](/img/wordpress_created.png)
+![](images/wordpress_created.png)
 
 Test your db connection by logging in to your db from your webserver, before that, ensure you allowed port 3306 (which is the default port for mysql) in your mysql instance inbound rules, configure the connection to your-webserver-IP-address/32
 
@@ -340,13 +340,13 @@ sudo mysql -u myuser -p -h (your mysql server ip address)
 ```
 __16.__ If logged successfully, you should get the same result below. P.S, the image below shows both my webserver which is on the left and mysql server which is on the right.
 
-![db_remote_connection](/img/DB_Remotely_connected.png)
+![db_remote_connection](images/DB_Remotely_connected.png)
 
 **Now that you have successfully setup and configured mysql and connected to it remotely from your webserver, it is essential we set up wordpress to do the same.**
 
 __17.__  Visit your-ip-address/wordpress in your web browser and you should get the same result as below;
 
-![](/img/wordpress_installed.png)
+![](images/wordpress_installed.png)
 
 ## STEP FIVE
 
@@ -373,7 +373,7 @@ sudo vi wp-config.php
 
 - Visit your webserver IP 
   
-![](/img/WP_Install.png)
+![](images/WP_Install.png)
 ```bash
 address/wordpress directory
 your-ip-address/wordpress
@@ -381,7 +381,7 @@ your-ip-address/wordpress
 
   and you should get the installation page below :
 
-![](/img/connected%20_wordpress%20db.png)
+![](images/connected%20_wordpress%20db.png)
 
 - Follow the installation process and click on install, wait a few minutes and wordpress would have been successfully installed using your remote database on the mysql server
   
@@ -393,6 +393,6 @@ Site title for the site.
 Discourage search engines from indexing this site:
 
 ![wp_setup_complete
-](/img/WP_Setup_Complete.png)
+](images/WP_Setup_Complete.png)
 
 **In this documentation, we've mastered the process of creating and linking EBS volumes to our instance, partitioning and establishing logical volumes to house our WordPress website. Furthermore, we've successfully crafted a WordPress site, stored its files on our Apache web server, and hosted the database on a separate server, allowing us to remotely access it.**
