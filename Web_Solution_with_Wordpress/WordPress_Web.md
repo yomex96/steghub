@@ -23,7 +23,7 @@ Configure the volume:
  - Availability Zone: Same as the  EC2 instances we created.
 - Click **Create Volume**.
   
-   ![ebs_volume](images/ebs_volume.png)
+   ![ebs_volume](images/Screenshot.png)
 
 **NOTE:** Repeat the above steps to create 2 more volumes.
 
@@ -35,7 +35,7 @@ Configure the volume:
 5. Repeat the above steps to attach the other two volumes to the server instance using device names `/dev/sdc` and `/dev/sdd`.
 
 ![Attach_Volume](images/Attach_Volume.png)
-![attach_volume_outcome](images/attach_volume_outcome.png)
+![attach_volume_outcome](images/Screenshot.png)
 
 # Step 2: Connect to the Instances and Prepare Volumes
 
