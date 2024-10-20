@@ -215,13 +215,12 @@ __1.__ Update the repositiory
 ```bash
 sudo yum -y update
 ```
-![](images/yum_update.png)
+
 
 __2.__ Install wget, Apache and it's dependencies
 ```bash
 sudo yum -y install wget httpd php php-mysqlnd php-fpm php-json
 ```
-![installApache](images/install_apache.png)
 
 __3.__ Enable and start Apache
 ```bash
@@ -242,7 +241,7 @@ __4.__ Install PHP and it's dependencies.
     sudo systemctl start php-fpm
     sudo systemctl enable php-fpm setsebool -P httpd_execmem 1
 ```
-![](images/PHP_Installation.png)
+
 
 __5.__ Restart Apache
 ```bash
@@ -262,7 +261,7 @@ Write the following code to chek the php configuration
 ```
 __7.__ Vist your IPaddress/info.php
 
-![](images/homepage_php.png)
+
 
 __8.__ Download and Copy wordpress to the /var/www/html directory
 ```bash
@@ -295,7 +294,7 @@ __10.__ Install and configure mysql server on your DB ec2 instance
 sudo yum -y update
 sudo yum install mysql-server
 ```
-![](images/db_mysql_server.jpg)
+
 
 __11.__ Verify that the service is up and running
 
