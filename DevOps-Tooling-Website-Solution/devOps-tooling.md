@@ -380,4 +380,4 @@ http://Web-Server-Public-IP-Address-or-Public-DNS-Name/index.php
 ![logina_details](/img/login_details.jpg)
 ![](/img/logged_in.jpg)
 
-Congratulations! You have just implemented a web solution for a DevOps team using LAMP stack with remote Database and NFS servers
+Congratulations! You have just implemented a web solution for a DevOps team using LAMP stack with remote Database and NFS servers easily
