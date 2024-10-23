@@ -22,7 +22,7 @@ Mount lv-apps on /mnt/apps – To be used by webservers Mount lv-logs on /mnt/lo
  ```bash
 lsblk
  ```
- ![block_devices](/img/check_volume.png)
+ ![block_devices](images/check_volume.png)
 
   __6.__ Use`` df -h`` command to see all mounts and free space on your server.
 ```bash
