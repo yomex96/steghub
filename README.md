@@ -1,6 +1,6 @@
 # StegHub School of DevOps & Cloud Engineering
 
-## Level 1 - 5
+
 
 ## Introduction
 
