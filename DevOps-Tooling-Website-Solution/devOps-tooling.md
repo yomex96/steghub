@@ -347,7 +347,7 @@ mysql -h <databse-private-ip> -u <db-username> -p <db-pasword> < tooling-db.sql
    ``` 
 ![](images/connect_remotely.png)
 
-![](images/tooling_2.jpg)
+
 
 __10.__ Create a new admin user and password, to do this, connect to mysql remotely.
 ```bash
