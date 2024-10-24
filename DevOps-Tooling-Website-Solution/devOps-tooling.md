@@ -274,7 +274,7 @@ Then test if it works.
 sudo mkdir /var/www
 sudo mount -t nfs -o rw,nosuid <NFS-Server-Private-IP-Address>:/mnt/apps /var/www
 ```
-![mount_NFS](images/emount_nfs.png)
+![mount_NFS](images/mount_nfs.png)
 
 __4.__ Make sure the changes persist after reboot.
 
