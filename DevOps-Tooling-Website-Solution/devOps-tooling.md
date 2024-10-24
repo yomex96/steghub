@@ -54,25 +54,25 @@ sudo gdisk /dev/nvme2n1
 ```bash
 sudo gdisk /dev/nvme3n1
 ```
-![partition2](/img/partition3.png)
+![partition2](images/partition3.png)
 
 ```bash
 sudo gdisk /dev/nvme4n1
 ```
-![partition4](/img/partition4.png)
+![partition4](images/partition4.png)
  __8.__ Use `lsblk` utility to view the newly configured partition on each of the 3 disks.
 
 ```bash
 lsblk
 ```
-![veiw_all_partition](/img/all_mounted.png)
+![veiw_all_partition](images/all_mounted.png)
 
  __9.__   Install `lvm2` package. Lvm2 is used for managing disk drives and other storage devices
 
 ```bash
 sudo yum install lvm2
 ```
-![lvm2_installation](/img/lmvn_installation.png)
+![lvm2_installation](images/lmvn_installation.png)
 
 __10.__ Use the `pvcreate` utility tool to mark each of the volumes as physical volumes to be used by LVM
 
@@ -82,25 +82,25 @@ sudo pvcreate /dev/nvme2n1p1
 sudo pvcreate /dev/nvme3n1p1
 sudo pvcreate /dev/nvme4n1p1
 ```
-![physicalvolume](/img/pvcreate_physical%20volume.png)
+![physicalvolume](images/pvcreate_physical%20volume.png)
 
 __11.__ Verify that the physical volume has been created by running 
 ```bash
 sudo pvs
 ```
-![sudopvs](/img/pvs.png)
+![sudopvs](images/pvs.png)
 
 __12.__ Use `vgcreate` utility to add all 3 PVs to a volume group. Name the VG `webdata-vg`
 ```bash
 sudo vgcreate webdata-vg /dev/nvme1n1p1  /dev/nvme2n1p1  /dev/nvme3n1p1  /dev/nvme4n1p1
 ```
-![vgcreate](/img/vgcreate.png)
+![vgcreate](images/vgcreate.png)
 
 __13.__ Verify that your `VG` has been created sucessfully by running 
 ```bash
 sudo vgs
 ```
-![vgs](/img/sudo_vgs.png)
+![vgs](images/sudo_vgs.png)
 
 __11.__ Create 3 logical volumes, name one opt-lv ,app-lv and the other logs-lv. For app-lv, use half of the disk size, then use the remaining part fpor the logs-lv
 ```bash
@@ -109,10 +109,10 @@ sudo lvcreate -n apps-lv -L 12G webdata-vg
 sudo lvcreate -n logs-lv -L 12G webdata-vg
 ```
 
-![volume_created](/img/volume_created.png)
+![volume_created](images/volume_created.png)
 
 __12.__ Verify that the logical volumes has been created
-![volume_verification](/img/volume_verification.png)
+![volume_verification](images/volume_verification.png)
 
 __13.__ Format the logical volumes using xfs
 ```bash
@@ -120,7 +120,7 @@ __13.__ Format the logical volumes using xfs
     sudo mkfs -t xfs /dev/webdata-vg/opt-lv
     sudo mkfs -t xfs /dev/webdata-vg/logs-lv
  ```
- ![using_xfs](/img/using_xfs.png)
+ ![using_xfs](images/using_xfs.png)
 
  __15.__ Create `/mnt` directory to store website files
  
@@ -129,7 +129,7 @@ sudo mkdir  /mnt/apps
 sudo mkdir  /mnt/opt
 sudo mkdir  /mnt/logs
 ```
-![directories](/img/dirctories.png)
+![directories](images/dirctories.png)
 
  __16.__ Mount `/lv-apps` on `/mnt/apps`logical volume
 ```bash
@@ -137,24 +137,24 @@ sudo mount /dev/webdata-vg/apps-lv /mnt/apps
 sudo mount /dev/webdata-vg/opt-lv /mnt/opt
 sudo mount /dev/webdata-vg/logs-lv /mnt/logs
 ```
-![sudo_mount](/img/sudo_mount.png)
+![sudo_mount](images/sudo_mount.png)
 
  __17.__ Update `/etc/fstab` file so that the mount configuration will persist after restart of the server. The UUID of the device will be used to update the `/etc/fstab` file.
 
 ```bash
 sudo blkid
 ```
-![update_etc/fstab](/img/sudo_blisk.png)
+![update_etc/fstab](images/sudo_blisk.png)
 
 ```bash
 sudo vi /etc/fstab
 ```
 Update /etc/fstab in this format using your own UUID and remember to remove the leading and ending quotes.
 
-![xfs_default](/img/xfs_default.png
+![xfs_default](images/xfs_default.png
 )
 
-![edited_xfs](/img/edited_xfs.png)
+![edited_xfs](images/edited_xfs.png)
 
 __18.__ Test the configuration and reload the daemon
 ```bash
@@ -165,7 +165,7 @@ __19.__ Verify your setup by running `df h`, output must look like this:
 ```bash
 df -h
 ```
-![test_configuration](/img/test_configuration.png)
+![test_configuration](images/test_configuration.png)
 
 __20.__ Install NFS server and configure it to start on reboot.
 
@@ -177,7 +177,7 @@ __20.__ Install NFS server and configure it to start on reboot.
   sudo systemctl status nfs-server.service
 ```
 
-![nfs_installation](/img/NFS_Installation_Server.png)
+![nfs_installation](images/NFS_Installation_Server.png)
 
 Export the mounts for webservers’ subnet cidr to connect as clients. For simplicity, you will install your all three Web Servers inside the same subnet, but in production set up you would probably want to separate each tier inside its own subnet for higher level of security. To check your subnet cidr – open your EC2 details in AWS web console and locate ‘Networking’ tab and open a Subnet link:
 Make sure we set up permission that will allow our Web servers to read, write and execute files on NFS:
@@ -193,7 +193,7 @@ sudo chmod -R 777 /mnt/opt
 
 sudo systemctl restart nfs-server.service
 ```
-![permission](/img/permission.png)
+![permission](images/permission.png)
 
 __21.__ Configure access to NFS for clients within the same subnet (example of Subnet CIDR – 172.31.32.0/20 ):
 ```bash
@@ -207,18 +207,18 @@ Esc + :wq!
 
 sudo exportfs -arv
 ```
-![](/img/ipv4_cidr.png)
-![](/img/sudo_exportfvx.png)
+![](images/ipv4_cidr.png)
+![](images/sudo_exportfvx.png)
 
 __22.__ Check which port is used by NFS and open it using Security Groups (add new Inbound Rule)
 ```bash
 rpcinfo -p | grep nfs
 ```
-![](/img/nfs_ports.png)
+![](images/nfs_ports.png)
 
 **Important note: In order for NFS server to be accessible from your client, you must also open following ports: TCP 111, UDP 111, UDP 2049**
 
-![edited_SG](/img/securitygroups.png)
+![edited_SG](images/securitygroups.png)
 
 ### STEP TWO: CONFIGURE THE DATABASE SERVER (MYSQL)
 
