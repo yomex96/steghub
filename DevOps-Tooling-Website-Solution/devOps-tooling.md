@@ -380,4 +380,42 @@ http://Web-Server-Public-IP-Address-or-Public-DNS-Name/index.php
 ![logina_details](images/login_details.jpg)
 ![](images/logged_in.jpg)
 
+Here are some challenges you might face when following the steps to prepare the NFS server and web server setup:
+
+### NFS Server Setup Challenges:
+1. **EC2 Instance Configuration**
+   - Ensuring that all necessary permissions, such as inbound/outbound rules and security groups, are correctly configured to allow SSH access and communication between EC2 instances and the NFS server.
+   - Managing instance limits if you are working on AWS Free Tier with t3.micro instances.
+
+2. **EBS Volumes and LVM Configuration**
+   - Correctly attaching multiple EBS volumes to the EC2 instance and ensuring that they are accessible via `lsblk`.
+   - While working with LVM, ensuring that the volumes are properly initialized, and logical volumes are created without any errors in partitioning or volume allocation.
+
+3. **XFS Formatting**
+   - Ensuring that the logical volumes are formatted with the XFS file system without issues, as the default formatting might be ext4, and any misstep could result in unusable volumes.
+
+4. **Mounting Volumes**
+   - Verifying that the volumes are correctly mounted to the respective directories (`/mnt/apps`, `/mnt/opt`, `/mnt/logs`) and that they persist after reboots by correctly updating `/etc/fstab`. Misconfigurations in this file could result in the system failing to mount after reboot.
+
+
+### Database Server (MySQL) Setup Challenges:
+1. **MySQL Installation and Configuration**
+   - Ensuring that MySQL is installed without errors and configured to bind to all IP addresses (0.0.0.0) so that web servers can connect from the subnet.
+
+2. **Database User Permissions**
+   - Correctly granting database permissions for the `webaccess` user to access the database only from the web servers’ subnet CIDR. Incorrect permissions could result in database access issues.
+
+3. **Firewall and Security Group Rules**
+   - Configuring security group rules to allow MySQL (port 3306) traffic only from the correct subnet CIDR. Failing to configure these rules could expose the database to unwanted access or block legitimate traffic.
+
+### Web Server Setup Challenges:
+1. **NFS Client Setup**
+   - Successfully mounting the `/var/www` directory from the NFS server on each web server and verifying that the directory is shared across all web servers.
+   - Ensuring that the NFS client can access the NFS shares and that changes made in the `/var/www` directory are reflected across all web servers.
+
+2. **Persistence Across Reboots**
+   - Making sure that NFS mounts persist after reboots by correctly configuring `/etc/fstab`. Incorrect configuration may cause the mounts to not be available after a reboot.
+
+
+By anticipating these challenges, you can prepare for troubleshooting and ensure a smooth setup.
 Congratulations! You have just implemented a web solution for a DevOps team using LAMP stack with remote Database and NFS servers easily
