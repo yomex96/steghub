@@ -324,7 +324,7 @@ __7.__ Locate the log folder for Apache on the Web Server and mount it to NFS se
 
 __8.__  Fork the tooling source code from [Darey.io](https://github.com/darey-io/tooling) Github Account to your Github account.  (Learn how to fork a repo [here](https://www.youtube.com/watch?v=f5grYMXbAV0))
 
-![tooling_fork](images/tooling_fork.png)
+![tooling_fork](images/Screenshot.png.png)
 
 __9.__ Deploy the tooling website source code to the webserver
 
