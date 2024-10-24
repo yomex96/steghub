@@ -56,7 +56,6 @@ Manages source code and version control.
 3. **Application Deployment**: Deploy PHP app, configure database, and set up NFS storage.
 4. **CI/CD**: Implement automated pipeline for build, test, and deployment.
 
-## Documentation
 
 ## Author : Abayomi Robert Onawole 
 For detailed setup and deployment instructions, see the project wiki or documentation repository.
