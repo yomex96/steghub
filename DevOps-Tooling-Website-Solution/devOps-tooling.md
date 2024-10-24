@@ -28,7 +28,7 @@ lsblk
 ```bash
 df -h
 ```
-![](/img/free_space_server.png)
+![](images/free_space_server.png)
 
  __7.__ Use `gdisk` to create a single partition on each of the 3 disks
 
@@ -43,13 +43,13 @@ sudo gdisk /dev/nvme1n1
 - Press Enter to accept the default last sector, using the entire disk.
 - Type w to write the changes and exit.
 - 
-![partition1](/img/partition1.png)
+![partition1](images/partition1.png)
 
 ```bash
 sudo gdisk /dev/nvme2n1
 ```
 
-![partition2](/img/partition2.png)
+![partition2](images/partition2.png)
 
 ```bash
 sudo gdisk /dev/nvme3n1
@@ -231,7 +231,7 @@ __2.__ Install mysql server
 ```bash
 sudo apt install -y mysql-server
 ```
-![mysql_installation](/img/mysql_installation.png)
+![mysql_installation](images/mysql_installation.png)
 
 -  Create a database and name it tooling
 
@@ -247,7 +247,7 @@ GRANT ALL PRIVILEGES ON tooling.* TO 'webaccess'@'172.31.16.0/20';
 FLUSH PRIVILEGES;
 exit
 ```
-![sudo_mysql](/img/sudo_mysql.png)
+![sudo_mysql](images/sudo_mysql.png)
 
 - Edit the MySQL configuration file to bind it to all IP addresses, (0.0.0.0) Open the MySQL configuration file, which is located at /etc/mysql/mysql.conf.d/mysqld.cnf:
 
@@ -265,7 +265,7 @@ __2.__ Install NFS client (do thid for all webservers that would be client to th
 ```bash
 sudo yum install nfs-utils nfs4-acl-tools -y
 ```
-![](/img/sudo_install.png)
+![](images/sudo_install.png)
 
 __3.__ Mount /var/www/ and target the NFS server’s export for apps.
 Then test if it works.
@@ -274,7 +274,7 @@ Then test if it works.
 sudo mkdir /var/www
 sudo mount -t nfs -o rw,nosuid <NFS-Server-Private-IP-Address>:/mnt/apps /var/www
 ```
-![mount_NFS](/img/mount_nfs.png)
+![mount_NFS](images/emount_nfs.png)
 
 __4.__ Make sure the changes persist after reboot.
 
@@ -310,21 +310,21 @@ sudo systemctl enable php-fpm
 setsebool -P httpd_execmem 1
 ```
 
-![](/img/webserver1.png)
+![](images/webserver1.png)
 
 **Repeat steps 1-5 for another 2 Web Servers.**
 
 __6.__ Verify that Apache files and directories are available on the Web Server in /var/www and also on the NFS server in /mnt/apps. If you see the same files – it means NFS is mounted correctly. You can try to create a new file touch test.txt from one server and check if the same file is accessible from other Web Servers.
 
-![verify](/img/webserver2.png)
-![verify_web3](/img/webserver_3.png)
+![verify](images/webserver2.png)
+![verify_web3](images/webserver_3.png)
 
 
 __7.__ Locate the log folder for Apache on the Web Server and mount it to NFS server’s export for logs. Repeat step №4 to make sure the mount point will persist after reboot.
 
 __8.__  Fork the tooling source code from [Darey.io](https://github.com/darey-io/tooling) Github Account to your Github account.  (Learn how to fork a repo [here](https://www.youtube.com/watch?v=f5grYMXbAV0))
 
-![tooling_fork](/img/tooling_fork.png)
+![tooling_fork](images/tooling_fork.png)
 
 __9.__ Deploy the tooling website source code to the webserver
 
@@ -345,9 +345,9 @@ git clone https://github.com/citadelict/tooling.git
 ```bash
 mysql -h <databse-private-ip> -u <db-username> -p <db-pasword> < tooling-db.sql
    ``` 
-![](/img/connect_remotely.png)
+![](images/connect_remotely.png)
 
-![](/img/tooling_2.jpg)
+![](images/tooling_2.jpg)
 
 __10.__ Create a new admin user and password, to do this, connect to mysql remotely.
 ```bash
@@ -376,8 +376,8 @@ __14.__ Restart apache again.
 __15.__ Open the website in your browser and make sure you can login into the websute with myuser user.
 http://Web-Server-Public-IP-Address-or-Public-DNS-Name/index.php
 
-![login](/img/login_page.jpg)
-![logina_details](/img/login_details.jpg)
-![](/img/logged_in.jpg)
+![login](images/login_page.jpg)
+![logina_details](images/login_details.jpg)
+![](images/logged_in.jpg)
 
 Congratulations! You have just implemented a web solution for a DevOps team using LAMP stack with remote Database and NFS servers easily
