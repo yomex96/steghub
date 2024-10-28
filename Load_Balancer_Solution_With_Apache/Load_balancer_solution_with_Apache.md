@@ -1,10 +1,16 @@
 # Load-Balancing-with-Apache
 
-After completing Project-7 you might wonder how a user will be accessing each of the webservers using 3 different IP addreses or 3 different DNS names. You might also wonder what is the point of having 3 different servers doing exactly the same thing.
+## Project Overview
 
-When we access a website in the Internet we use an URL and we do not really know how many servers are out there serving our requests, this complexity is hidden from a regular user, but in case of websites that are being visited by millions of users per day (like Google or Reddit) it is impossible to serve all the users from a single Web Server (it is also applicable to databases, but for now we will not focus on distributed DBs).
+This project aims to deploy and configure an Apache Load Balancer to distribute traffic across two web servers hosting the Tooling Website solution.
 
-Each URL contains a domain name part, which is translated (resolved) to IP address of a target server that will serve requests when open a website in the Internet. Translation (resolution) of domain names is perormed by DNS servers, the most commonly used one has a public IP address 8.8.8.8 and belongs to Google. You can try to query it with nslookup command:
+## Prerequisites
+
+Before proceeding with this task, ensure that you have the following components already configured:
+
+1. Two RHEL8 Web Servers
+2. One MySQL DB Server (Ubuntu 20.04)
+3. One RHEL8 NFS Server
 
 ![application_architecture](images/_3tier%20web%20application.png)
 #
