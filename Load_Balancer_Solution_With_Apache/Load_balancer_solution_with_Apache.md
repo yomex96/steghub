@@ -13,11 +13,11 @@ We implement a Load Balancing solution using apache2 so as to handle routing use
 # Implementation
 
 Create an ubuntu server which will server as loadbalancer to the webservers
-![create_lb](./img/1.create_lb_server.jpg)
+![create_lb](images/1.create_lb_server.jpg)
 
 It is important to open up TCP port 80 in the load balancers inbound rule as requests are made through it.
 
-![inbound_rules](./img/2.inbound-rules.jpg)
+![inbound_rules](images/2.inbound-rules.jpg)
 
 ## Installing Packages
 Install apache2, libxml and then configure apache for loadbalancing via enabling proxy and proxy_balancer
@@ -43,7 +43,7 @@ sudo systemctl status apache2
 
 ```
 
-![apache_running](./img/3.apache_running.jpg)
+![apache_running](images/3.apache_running.jpg)
 
 ## Configuring Load Balancer
 
@@ -68,7 +68,7 @@ sudo vi /etc/apache2/sites-available/000-default.conf
 ```
 **Note:** Only 2 servers were added to the proxy list and also other ways to route traffic aside `bytraffic` includes `byrequests, bybusyness, heartbeats` which can be specified in `ProxySet lbmethod=?` .
 
-![configure_lb](./img/4.configure_lb.jpg)
+![configure_lb](images/4.configure_lb.jpg)
 
 Restart the apache2 server `sudo systemctl restart apache2`
 
