@@ -73,14 +73,14 @@ sudo vi /etc/apache2/sites-available/000-default.conf
 Restart the apache2 server `sudo systemctl restart apache2`
 
 On the web browser, test the load balancing connection using the public Ip address of our load balancer server.
-![lb_log_browser](./img/6.lb_log_browser.jpg)
+![lb_log_browser](images/6.lb_log_browser.jpg)
 
 To confirm that traffic is routed evenly to both web servers as the load balancer server is receiving traffic (which in our case is by refreshing the webpage) we can check the logs both servers receive `sudo tail -f /var/log/httpd/access_log`
 
 Server1
-![server_1](./img/5.a.serverlogs.jpg)
+![server_1](images/5.a.serverlogs.jpg)
 Server2
-![server_2](./img/5.b.server_logs.jpg)
+![server_2](images/5.b.server_logs.jpg)
 #
 
 ## Configuring DNS Names (Locally)
@@ -90,13 +90,13 @@ In order not to always provide webserver private ip address whenever a new web s
 ```
 sudo vi /etc/hosts
 ```
-![dns_setting](./img/7.dns_setting.jpg)
-![dns_config](./img/8.dns_config.jpg)
+![dns_setting](images/7.dns_setting.jpg)
+![dns_config](images/8.dns_config.jpg)
 
 To see this is play we can curl our dns name on the loadbalancer server. Since the DNS names are local DNS configuration we can only access them locally hence the loadbalancer uses them locally to target the backend web servers
 
 Server1_Web1
-![web1](./img/9.web1.jpg)
+![web1](images/9.web1.jpg)
 
 Server2_Web2
-![web2](./img/10.web2.jpg)
+![web2](images/10.web2.jpg)
