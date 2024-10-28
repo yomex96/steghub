@@ -116,12 +116,6 @@ To see this is play we can curl our dns name on the loadbalancer server. Since t
 
 # Load Balancing with Apache - Challenges and Solutions Summary
 
-## Project Overview
-
-This project entailed setting up an Apache Load Balancer on an Ubuntu EC2 instance to evenly distribute traffic between two RHEL8 web servers that host the Tooling Website solution. Additional MySQL and NFS servers provided essential database and file-sharing support.
-
----
-
 ## Challenges and How They Were Overcome
 
 1. **Configuring Apache as a Load Balancer**
