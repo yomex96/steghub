@@ -114,8 +114,52 @@ sudo vi /etc/hosts
 
 To see this is play we can curl our dns name on the loadbalancer server. Since the DNS names are local DNS configuration we can only access them locally hence the loadbalancer uses them locally to target the backend web servers
 
-Server1_Web1
-![web1](images/9.web1.jpg)
+# Load Balancing with Apache - Challenges and Solutions Summary
 
-Server2_Web2
-![web2](images/10.web2.jpg)
+## Project Overview
+
+This project entailed setting up an Apache Load Balancer on an Ubuntu EC2 instance to evenly distribute traffic between two RHEL8 web servers that host the Tooling Website solution. Additional MySQL and NFS servers provided essential database and file-sharing support.
+
+---
+
+## Challenges and How They Were Overcome
+
+1. **Configuring Apache as a Load Balancer**
+   - **Problem:** Apache requires enabling multiple proxy and balancing modules to work effectively as a load balancer, making initial setup complex.
+   - **Solution:** I installed `apache2` with required modules (`proxy`, `proxy_balancer`, `proxy_http`, and `lbmethod_bytraffic`) to enable load balancing capabilities. These modules allowed Apache to route requests based on traffic levels and other criteria.
+
+     ```bash
+     sudo apt update && sudo apt install apache2 libxml2-dev -y
+     sudo a2enmod rewrite proxy proxy_balancer proxy_http headers lbmethod_bytraffic
+     sudo systemctl restart apache2
+     ```
+
+2. **Editing the Apache Configuration File**
+   - **Problem:** Configuring the load balancer to recognize the two backend web servers required custom entries in the Apache configuration file.
+   - **Solution:** I edited the `/etc/apache2/sites-available/000-default.conf` file, adding each server as a `BalancerMember` in a `Proxy` block. This setup allowed Apache to distribute traffic evenly.
+
+     ```apache
+     <Proxy "balancer://mycluster">
+         BalancerMember http://<WebServer1-Private-IP>:80 loadfactor=5 timeout=1
+         BalancerMember http://<WebServer2-Private-IP>:80 loadfactor=5 timeout=1
+         ProxySet lbmethod=bytraffic
+     </Proxy>
+
+     ProxyPreserveHost On
+     ProxyPass / balancer://mycluster/
+     ProxyPassReverse / balancer://mycluster/
+     ```
+
+3. **Ensuring Traffic Flow Through Port 80**
+   - **Problem:** By default, traffic might not reach the load balancer if inbound security rules for port 80 are not set up.
+   - **Solution:** I configured the security group for the EC2 instance to allow incoming traffic on port 80, ensuring the load balancer was accessible from outside networks.
+
+4. **Testing Load Distribution**
+   - **Problem:** Verifying that traffic was evenly distributed between the two web servers was challenging without a monitoring method.
+   - **Solution:** I used Apache access logs on each web server (`/var/log/httpd/access_log`) to track incoming requests. By refreshing the web page multiple times and checking the logs, I confirmed the load balancer was routing traffic to both servers as expected.
+
+5. **Implementing Local DNS for Easier Management**
+   - **Problem:** Manually updating IP addresses for web servers in the load balancer configuration is cumbersome.
+   - **Solution:** I configured local DNS entries on the load balancer server’s `/etc/hosts` file, assigning easy-to-remember domain names to the web servers. This allows for easy updates without modifying the main Apache configuration file.
+
+
