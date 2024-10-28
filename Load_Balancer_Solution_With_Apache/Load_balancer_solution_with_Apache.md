@@ -34,6 +34,7 @@ It is important to open up TCP port 80 in the load balancers inbound rule as req
 ![inbound_rules](images/2.inbound-rules.jpg)
 
 ## Installing Packages
+
 Install apache2, libxml and then configure apache for loadbalancing via enabling proxy and proxy_balancer
 ```
 # Installing apache2
