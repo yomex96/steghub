@@ -14,9 +14,9 @@ Basic knowledge of Apache, Linux, and AWS EC2.
 SSH access to the EC2 instances.
 
 ## Architecture
-## Load Balancer (Apache): Distributes incoming requests to multiple web servers.
-## Web Servers: Hosts the Tooling Website and responds to requests from the load balancer.
-## The Apache Load Balancer directs user traffic to available web servers, ensuring that the website remains accessible even if one of the web servers becomes unavailable.
+# Load Balancer (Apache): Distributes incoming requests to multiple web servers.
+# Web Servers: Hosts the Tooling Website and responds to requests from the load balancer.
+# The Apache Load Balancer directs user traffic to available web servers, ensuring that the website remains accessible even if one of the web servers becomes unavailable.
 
 
 
