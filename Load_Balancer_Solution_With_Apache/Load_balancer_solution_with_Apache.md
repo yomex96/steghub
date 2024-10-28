@@ -15,6 +15,15 @@ Before proceeding with this task, ensure that you have the following components 
 ![application_architecture](images/_3tier%20web%20application.png)
 #
 
+## Task Objectives
+
+The main objectives of this task are:
+
+1. Deploy an Ubuntu EC2 instance to host the Apache Load Balancer.
+2. Install and configure the Apache Load Balancer on the Ubuntu EC2 instance.
+3. Configure the Load Balancer to distribute traffic across the two web servers.
+4. Ensure that users can access the Tooling Website solution through the Load Balancer.
+
 # Implementation
 
 Create an ubuntu server which will server as loadbalancer to the webservers
