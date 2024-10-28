@@ -1,12 +1,22 @@
 # Load Balancer Solution with Apache
 
-## Task 
+## Overview
 
-Deploy and configure an Apache Load Balancer for Tooling Website solution on a separate Ubuntu EC2 intance. 
+This project demonstrates deploying and configuring an Apache Load Balancer to serve a Tooling Website solution on a separate Ubuntu EC2 instance. The purpose of this load balancer is to distribute traffic evenly across multiple web servers, enhancing fault tolerance, scalability, and availability. For simplicity, this setup includes two web servers, but the configuration can be extended to three or more servers as needed.
 
-Make sure that users can be served by Web servers through the Load Balancer.
+## Task
+Deploy and configure an Apache Load Balancer on an Ubuntu EC2 instance that enables users to access the web application via the load balancer, which then distributes incoming traffic to the web servers.
 
-To simplify, let us implement this solution with 2 Web Servers, the approach will be the same for 3 and more Web Servers.
+## Prerequisites
+
+An AWS account with permissions to create and configure EC2 instances.
+Basic knowledge of Apache, Linux, and AWS EC2.
+SSH access to the EC2 instances.
+
+## Architecture
+Load Balancer (Apache): Distributes incoming requests to multiple web servers.
+Web Servers: Hosts the Tooling Website and responds to requests from the load balancer.
+The Apache Load Balancer directs user traffic to available web servers, ensuring that the website remains accessible even if one of the web servers becomes unavailable.
 
 
 
