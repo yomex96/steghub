@@ -58,7 +58,7 @@ sudo systemctl status apache2
 
 ```
 
-![apache_running](images/3.apache_running.jpg)
+
 
 ## Configuring Load Balancer
 
