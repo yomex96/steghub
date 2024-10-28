@@ -90,7 +90,11 @@ Restart the apache2 server `sudo systemctl restart apache2`
 On the web browser, test the load balancing connection using the public Ip address of our load balancer server.
 ![lb_log_browser](images/6.lb_log_browser.jpg)
 
-To confirm that traffic is routed evenly to both web servers as the load balancer server is receiving traffic (which in our case is by refreshing the webpage) we can check the logs both servers receive `sudo tail -f /var/log/httpd/access_log`
+To confirm that traffic is routed evenly to both web servers as the load balancer server is receiving traffic (which in our case is by refreshing the webpage) we can check the logs both servers receive 
+
+```
+sudo tail -f /var/log/httpd/access_log
+```
 
 Server1
 ![server_1](images/5.a.serverlogs.jpg)
