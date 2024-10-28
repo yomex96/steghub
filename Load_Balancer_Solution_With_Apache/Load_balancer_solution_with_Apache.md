@@ -7,7 +7,7 @@ For the website solution implemented, how can we balance users request traffic a
 
 We implement a Load Balancing solution using apache2 so as to handle routing users request to our web servers.
 
-![application_architecture](./img/_3tier%20web%20application.png)
+![application_architecture](images/_3tier%20web%20application.png)
 #
 
 # Implementation
