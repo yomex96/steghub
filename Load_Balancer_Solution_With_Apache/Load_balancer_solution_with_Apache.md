@@ -27,7 +27,7 @@ The main objectives of this task are:
 # Implementation
 
 Create an ubuntu server which will server as loadbalancer to the webservers
-![create_lb](images/1.create_lb_server.jpg)
+
 
 It is important to open up TCP port 80 in the load balancers inbound rule as requests are made through it.
 
