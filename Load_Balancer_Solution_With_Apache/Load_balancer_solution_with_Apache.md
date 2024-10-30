@@ -84,7 +84,7 @@ sudo vi /etc/apache2/sites-available/000-default.conf
 ```
 **Note:** Only 2 servers were added to the proxy list and also other ways to route traffic aside `bytraffic` includes `byrequests, bybusyness, heartbeats` which can be specified in `ProxySet lbmethod=?` .
 
-![configure_lb](images/4.configure_lb.jpg)
+![configure_lb](images/Configuration.png)
 
 Restart the apache2 server `sudo systemctl restart apache2`
 
