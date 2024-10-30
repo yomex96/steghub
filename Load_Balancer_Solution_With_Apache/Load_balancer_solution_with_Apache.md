@@ -31,7 +31,7 @@ Create an ubuntu server which will server as loadbalancer to the webservers
 
 It is important to open up TCP port 80 in the load balancers inbound rule as requests are made through it.
 
-![inbound_rules](images/2.inbound-rules.jpg)
+![inbound_rules](images/Screen_load.png)
 
 ## Installing Packages
 
