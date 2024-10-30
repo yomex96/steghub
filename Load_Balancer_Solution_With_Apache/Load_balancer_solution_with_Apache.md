@@ -103,15 +103,9 @@ Server2
 ![server_2](images/5.b.server_logs.jpg)
 #
 
-## Configuring DNS Names (Locally)
+Try to refresh your browser page http://<Load-Balancer-Public-IP-Address-or-Public-DNS-Name>/index.php several times and make sure that both servers receive HTTP GET requests from your LB – new records must appear in each server’s log file. The number of requests to each server will be approximately the same since we set loadfactor to the same value for both servers – it means that traffic will be disctributed evenly between them.
 
-In order not to always provide webserver private ip address whenever a new web server needs to be added on the list of loadbalancer proxy, we can specify them on the hosts file and provide a domain name for each which suites us
-
-```
-sudo vi /etc/hosts
-```
-![dns_setting](images/7.dns_setting.jpg)
-![dns_config](images/8.dns_config.jpg)
+If you have configured everything correctly – your users will not even notice that their requests are served by more than one server.
 
 To see this is play we can curl our dns name on the loadbalancer server. Since the DNS names are local DNS configuration we can only access them locally hence the loadbalancer uses them locally to target the backend web servers
 
