@@ -55,8 +55,9 @@ sudo a2enmod lbmethod_bytraffic
 #Restart apache2 service
 sudo systemctl restart apache2
 sudo systemctl status apache2
-
+loadbalancer.png
 ```
+![inbound_rules](images/loadbalancer.png)
 
 
 
