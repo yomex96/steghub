@@ -97,10 +97,7 @@ To confirm that traffic is routed evenly to both web servers as the load balance
 sudo tail -f /var/log/httpd/access_log
 ```
 
-Server1
-![server_1](images/5.a.serverlogs.jpg)
-Server2
-![server_2](images/5.b.server_logs.jpg)
+
 #
 
 Try to refresh your browser page http://<Load-Balancer-Public-IP-Address-or-Public-DNS-Name>/index.php several times and make sure that both servers receive HTTP GET requests from your LB – new records must appear in each server’s log file. The number of requests to each server will be approximately the same since we set loadfactor to the same value for both servers – it means that traffic will be disctributed evenly between them.
