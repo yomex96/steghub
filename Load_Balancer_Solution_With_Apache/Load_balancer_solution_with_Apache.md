@@ -88,7 +88,7 @@ sudo vi /etc/apache2/sites-available/000-default.conf
 Restart the apache2 server `sudo systemctl restart apache2`
 
 On the web browser, test the load balancing connection using the public Ip address of our load balancer server.
-![lb_log_browser](images/6.lb_log_browser.jpg)
+![lb_log_browser](images/tooling.png)
 
 To confirm that traffic is routed evenly to both web servers as the load balancer server is receiving traffic (which in our case is by refreshing the webpage) we can check the logs both servers receive 
 
