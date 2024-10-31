@@ -133,6 +133,7 @@ This is seen by the change of name on the web application
 **1. Setting Up Jenkins on AWS**
 Challenge: Configuring Jenkins on an AWS instance involved multiple steps, including handling permissions, dependencies, and security configurations. AWS Security Groups required careful setup to allow traffic on the Jenkins default port (8080).
 Solution: Followed a step-by-step approach, starting with updating the system and installing the required Java Development Kit (JDK), which Jenkins depends on. Opened port 8080 on the Security Group to allow external access to the Jenkins console. These actions enabled access and remote interaction with Jenkins.
+
 **2. Configuring GitHub Webhook for Automated Builds**
 Challenge: Setting up a webhook between GitHub and Jenkins to automatically trigger builds on code updates required careful configuration. It was crucial to ensure that Jenkins could listen to GitHub events.
 Solution: Created a webhook in GitHub and linked it to the Jenkins server by providing the Jenkins URL with /github-webhook/. This connection allowed Jenkins to receive notifications of Git pushes, automatically initiating builds.
