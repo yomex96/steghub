@@ -137,9 +137,11 @@ Solution: Followed a step-by-step approach, starting with updating the system an
 **2. Configuring GitHub Webhook for Automated Builds**
 Challenge: Setting up a webhook between GitHub and Jenkins to automatically trigger builds on code updates required careful configuration. It was crucial to ensure that Jenkins could listen to GitHub events.
 Solution: Created a webhook in GitHub and linked it to the Jenkins server by providing the Jenkins URL with /github-webhook/. This connection allowed Jenkins to receive notifications of Git pushes, automatically initiating builds.
+
 **3. Managing Build Artifacts with Jenkins**
 Challenge: Ensuring that build artifacts were stored and accessible for deployment was vital, yet configuring Jenkins to archive these artifacts consistently posed some difficulties.
 Solution: Set up Jenkins' “Post-build Actions” to archive the build artifacts, ensuring that each build generated an archive of compiled code that could be deployed. This allowed easy access to past build artifacts for troubleshooting and review.
+
 **4. Deploying Artifacts to NFS Server**
 Challenge: Transferring build artifacts from Jenkins to an NFS server for deployment required reliable and secure SSH access. The NFS server needed to accept connections and store the artifacts for downstream processes.
 Solution: Installed the Publish Over SSH plugin in Jenkins, configured SSH access with a secure private key, and specified the target directory on the NFS server. Testing the SSH connection ensured that Jenkins could securely publish the artifacts to the NFS server.
@@ -148,8 +150,12 @@ Solution: Installed the Publish Over SSH plugin in Jenkins, configured SSH acces
 ## Benefits of the Project
 
 **Increased Deployment Speed:** Automation with Jenkins allowed code changes to reach production faster and more reliably, reducing the need for manual intervention.
+
 **Reliability and Consistency:** The CI/CD pipeline ensures consistent builds and deployments, reducing errors and facilitating easy rollbacks using archived artifacts.
+
 **Efficient Collaboration:** Team members can push code changes to GitHub without manually coordinating deployment, as Jenkins handles builds and deployments autonomously.
+
 **Enhanced Security and Control:** Secure configurations with AWS Security Groups, SSH, and GitHub webhooks provide a controlled environment for deployment.
+
 **Scalability:** This setup is scalable across multiple environments, supporting additional servers or services as the project grows.
 This automated deployment pipeline provides a structured, secure, and efficient way to manage code from development to deployment, greatly enhancing productivity and stability.
