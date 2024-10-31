@@ -55,8 +55,9 @@ sudo a2enmod lbmethod_bytraffic
 #Restart apache2 service
 sudo systemctl restart apache2
 sudo systemctl status apache2
-
+loadbalancer.png
 ```
+![inbound_rules](images/loadbalancer.png)
 
 
 
@@ -83,12 +84,12 @@ sudo vi /etc/apache2/sites-available/000-default.conf
 ```
 **Note:** Only 2 servers were added to the proxy list and also other ways to route traffic aside `bytraffic` includes `byrequests, bybusyness, heartbeats` which can be specified in `ProxySet lbmethod=?` .
 
-![configure_lb](images/4.configure_lb.jpg)
+![configure_lb](images/Configuration.png)
 
 Restart the apache2 server `sudo systemctl restart apache2`
 
 On the web browser, test the load balancing connection using the public Ip address of our load balancer server.
-![lb_log_browser](images/6.lb_log_browser.jpg)
+![lb_log_browser](images/tooling.png)
 
 To confirm that traffic is routed evenly to both web servers as the load balancer server is receiving traffic (which in our case is by refreshing the webpage) we can check the logs both servers receive 
 
@@ -96,21 +97,12 @@ To confirm that traffic is routed evenly to both web servers as the load balance
 sudo tail -f /var/log/httpd/access_log
 ```
 
-Server1
-![server_1](images/5.a.serverlogs.jpg)
-Server2
-![server_2](images/5.b.server_logs.jpg)
+
 #
 
-## Configuring DNS Names (Locally)
+Try to refresh your browser page http://<Load-Balancer-Public-IP-Address-or-Public-DNS-Name>/index.php several times and make sure that both servers receive HTTP GET requests from your LB – new records must appear in each server’s log file. The number of requests to each server will be approximately the same since we set loadfactor to the same value for both servers – it means that traffic will be disctributed evenly between them.
 
-In order not to always provide webserver private ip address whenever a new web server needs to be added on the list of loadbalancer proxy, we can specify them on the hosts file and provide a domain name for each which suites us
-
-```
-sudo vi /etc/hosts
-```
-![dns_setting](images/7.dns_setting.jpg)
-![dns_config](images/8.dns_config.jpg)
+If you have configured everything correctly – your users will not even notice that their requests are served by more than one server.
 
 To see this is play we can curl our dns name on the loadbalancer server. Since the DNS names are local DNS configuration we can only access them locally hence the loadbalancer uses them locally to target the backend web servers
 
