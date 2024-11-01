@@ -133,7 +133,7 @@ Scroll down to Publish over SSH plugin configuration section and configure it to
 Test the configuration and make sure the connection returns Success. Remember, that TCP port 22 on NFS server must be open to receive
 SSH connections.
 
-![6026](image/jenkins-nfs-success.jpg)
+![6026](image/transfer.png)
 
 Save the configuration, open your Jenkins job/project configuration page and add another one "Post-build Action"
 
@@ -142,7 +142,7 @@ files and directories – so we use \*\*.
 
 If you want to apply some particular pattern to define which files to send – use this syntax.
 
-![6028](image/post-build.jpg)
+![6028](image/transfer2.png)
 
 Save this configuration and go ahead, change something in README.MD file in your GitHub Tooling repository.
 
