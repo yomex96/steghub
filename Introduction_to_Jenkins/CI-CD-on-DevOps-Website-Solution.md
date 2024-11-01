@@ -153,7 +153,7 @@ SSH: Transferred 25 file(s)
 Finished: SUCCESS
 ```
 
-![image](images/last-build-error.jpg)
+
 
 If you find an error, change security settings of your NFS Server
 
@@ -161,9 +161,6 @@ If you find an error, change security settings of your NFS Server
 sudo chown -R nobody:nobody /mnt
 sudo chmod -R 777 /mnt
 ```
-
-![image](images/build-4-success.jpg)
-![image](images/build-history.jpg)
 
 To make sure that the files in /mnt/apps have been udated – connect via SSH/Putty to your NFS server and check README.MD file
 
@@ -174,8 +171,8 @@ cat /mnt/apps/README.md
 Now make a new change on the source code and push to github, Jenkins builds an artifact by downloading the code into its workspace based on the latest commit and via SSH it publishes the artifact into the NFS Server to update the source code. 
 
 This is seen by the change of name on the web application
-![](images/24.new_changes.jpg)
-![](images/25.new_change_updated.jpg)
+![](images/output.png)
+
 
 ## Challenges Encountered and Solutions
 **1. Setting Up Jenkins on AWS**
