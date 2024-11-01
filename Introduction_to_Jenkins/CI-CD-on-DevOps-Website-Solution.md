@@ -142,7 +142,7 @@ files and directories – so we use \*\*.
 
 If you want to apply some particular pattern to define which files to send – use this syntax.
 
-![6028](images/transfer2.png)
+![6028](images/final.png)
 
 Save this configuration and go ahead, change something in README.MD file in your GitHub Tooling repository.
 
