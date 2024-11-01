@@ -103,34 +103,71 @@ Our created artifact can be found on our local terminal too at this path
 
 
 ## Configuring Jenkins To Copy Files(Artifact) to NFS Server
+# Configure Jenkins to copy files to NFS server via SSH
 
-To achieve this, we install the `Publish Via SSH` pluging on Jenkins.
-The plugin allows one to send newly created packages to a remote server and install them, start and stop services that the build may depend on and many other use cases.
+Now we have our artifacts saved locally on Jenkins server, the next step is to copy them to our NFS server to /mnt/apps directory.
 
-On main dashboard select "Manage Jenkins" and choose "Manage Plugins" menu item.
+Jenkins is a highly extendable application and there are 1400+ plugins available. We will need a plugin that is called "Publish Over
+SSH".
+
+1. Install "Publish Over SSH" plugin.
+   On main dashboard select "Manage Jenkins" and choose "Manage Plugins" menu item.
 
 On "Available" tab search for "Publish Over SSH" plugin and install it
-![plugin](images/19.plugin.jpg)
 
-Configure the job to copy artifacts over to NFS server.
-On main dashboard select "Manage Jenkins" and choose "Configure System" menu item.
+![6025](image/publish-over-ssh.jpg)
 
-Scroll down to Publish over SSH plugin configuration section and configure it to be able to connect to the NFS server:
+2. Configure the job/project to copy artifacts over to NFS server.
+   On main dashboard select "Manage Jenkins" and choose "Configure System" menu item.
 
-Provide a private key (content of .pem file that you use to connect to NFS server via SSH/Putty)
+Scroll down to Publish over SSH plugin configuration section and configure it to be able to connect to your NFS server:
 
-Hostname – can be private IP address of NFS server <br/>
-Username – ec2-user (since NFS server is based on EC2 with RHEL 8) <br/>
-Remote directory – /mnt/apps since our Web Servers use it as a mointing point to retrieve files from the NFS server
+1. Provide a private key (content of .pem file that you use to connect to NFS server via SSH/Putty)
+2. Arbitrary name
+3. Hostname – can be private IP address of your NFS server
+4. Username – ec2-user (since NFS server is based on EC2 with RHEL 8)
+5. Remote directory – /mnt/apps since our Web Servers use it as a mointing point to retrieve files from the NFS server
 
-Test the configuration and make sure the connection returns Success. Remember, that TCP port 22 on NFS server must be open to receive SSH connections.
+Test the configuration and make sure the connection returns Success. Remember, that TCP port 22 on NFS server must be open to receive
+SSH connections.
 
-![setting_publish](images/20.setting_pos.jpg)
-![server_add](images/21.server_add.jpg)
+![6026](image/jenkins-nfs-success.jpg)
 
-We specify `**` on the `send build artifacts` tab meaning it sends all artifact to specified destination path(NFS Server). 
-![](images/22.archive_path.jpg)
-![](images/23.archive_path2.jpg)
+Save the configuration, open your Jenkins job/project configuration page and add another one "Post-build Action"
+
+Configure it to send all files probuced by the build into our previouslys define remote directory. In our case we want to copy all
+files and directories – so we use \*\*.
+
+If you want to apply some particular pattern to define which files to send – use this syntax.
+
+![6028](image/post-build.jpg)
+
+Save this configuration and go ahead, change something in README.MD file in your GitHub Tooling repository.
+
+Webhook will trigger a new job and in the "Console Output" of the job you will find something like this:
+
+```
+SSH: Transferred 25 file(s)
+Finished: SUCCESS
+```
+
+![image](image/last-build-error.jpg)
+
+If you find an error, change security settings of your NFS Server
+
+```powershell
+sudo chown -R nobody:nobody /mnt
+sudo chmod -R 777 /mnt
+```
+
+![image](image/build-4-success.jpg)
+![image](image/build-history.jpg)
+
+To make sure that the files in /mnt/apps have been udated – connect via SSH/Putty to your NFS server and check README.MD file
+
+```
+cat /mnt/apps/README.md
+```
 
 Now make a new change on the source code and push to github, Jenkins builds an artifact by downloading the code into its workspace based on the latest commit and via SSH it publishes the artifact into the NFS Server to update the source code. 
 
