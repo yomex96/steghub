@@ -46,7 +46,7 @@ sudo systemctl status jenkins
 ![jenkins_installation](images/jenkins_status.png)
 
 Since Jenkins runs on default port 8080, open this port on the Security Group inbound rule of the jenkins server on AWS 
-![jenkins_rule](images/jenkins_port.png)
+![jenkins_rule](images/port.png)
 
 Jenkins is up and running, copy and paste jenkins server public ip address appended with port 8080 on a web server to gain access to the interactive console. `<jenkins_server_public_ip_address>:8080`
 ![jenkins_install_success](images/4.jenkins_install_success.jpg)
