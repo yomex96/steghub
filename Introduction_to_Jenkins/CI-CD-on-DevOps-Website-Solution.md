@@ -58,8 +58,8 @@ sudo cat /var/lib/jenkins/secrets/initialAdminPassword
 ```
 
 ![suggested_installation](images/plugins.png)
-![plugin_installation](images/6.plugin_installation.jpg)
-![login_success](images/7.login_success.jpg)
+
+![login_success](images/homepage.png)
 
 ## Attaching WebHook to Jenkins Server
 
