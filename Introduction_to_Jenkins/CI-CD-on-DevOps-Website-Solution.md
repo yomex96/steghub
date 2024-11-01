@@ -57,7 +57,7 @@ The admin password can be found in the `'/var/lib/jenkins/secrets/initialAdminPa
 sudo cat /var/lib/jenkins/secrets/initialAdminPassword
 ```
 
-![suggested_installation](images/5.suggested_install.jpg)
+![suggested_installation](images/plugins.png)
 ![plugin_installation](images/6.plugin_installation.jpg)
 ![login_success](images/7.login_success.jpg)
 
