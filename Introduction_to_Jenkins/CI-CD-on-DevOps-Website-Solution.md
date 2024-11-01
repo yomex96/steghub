@@ -65,7 +65,7 @@ sudo cat /var/lib/jenkins/secrets/initialAdminPassword
 
 On the github repository that contains application code, create a webhook to connect to the jenkins job. To create webhook, go to the settings tab on the github repo and click on webhooks.
 Webhook should look like this `<public_ip_of_jenkins_server>:8080/github-webhook/`
-![webhook_creation](images/8.webhook_creation.jpg)
+![webhook_creation](images/webhook.png)
 
 ## Creating Job and Configuring GIT Based Push Trigger
 
