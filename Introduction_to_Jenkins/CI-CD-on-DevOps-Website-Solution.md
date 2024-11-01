@@ -17,11 +17,12 @@ Here I introduce Jenkins to automate code delivery to the NFS server
 
 ## Installing Jenkins Server
 
-Spun up a web server on AWS cloud and SSH into it.
+Turn up a web server on AWS cloud and SSH into it.
 
 Installing JDK which is an important Java based package required for Jenkins to run.
 ```
 sudo apt update
+
 sudo apt install default-jdk-headless
 ```
 ![java_installation](images/1.java_installation.jpg)
