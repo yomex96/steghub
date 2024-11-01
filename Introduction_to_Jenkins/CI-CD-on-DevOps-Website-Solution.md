@@ -133,7 +133,7 @@ Scroll down to Publish over SSH plugin configuration section and configure it to
 Test the configuration and make sure the connection returns Success. Remember, that TCP port 22 on NFS server must be open to receive
 SSH connections.
 
-![6026](image/transfer.png)
+![6026](images/transfer.png)
 
 Save the configuration, open your Jenkins job/project configuration page and add another one "Post-build Action"
 
@@ -142,7 +142,7 @@ files and directories – so we use \*\*.
 
 If you want to apply some particular pattern to define which files to send – use this syntax.
 
-![6028](image/transfer2.png)
+![6028](images/transfer2.png)
 
 Save this configuration and go ahead, change something in README.MD file in your GitHub Tooling repository.
 
@@ -153,7 +153,7 @@ SSH: Transferred 25 file(s)
 Finished: SUCCESS
 ```
 
-![image](image/last-build-error.jpg)
+![image](images/last-build-error.jpg)
 
 If you find an error, change security settings of your NFS Server
 
@@ -162,8 +162,8 @@ sudo chown -R nobody:nobody /mnt
 sudo chmod -R 777 /mnt
 ```
 
-![image](image/build-4-success.jpg)
-![image](image/build-history.jpg)
+![image](images/build-4-success.jpg)
+![image](images/build-history.jpg)
 
 To make sure that the files in /mnt/apps have been udated – connect via SSH/Putty to your NFS server and check README.MD file
 
