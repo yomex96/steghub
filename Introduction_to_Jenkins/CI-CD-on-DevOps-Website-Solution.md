@@ -90,16 +90,16 @@ Specify the particular trigger to use for triggering the job. Click "Configure" 
 ![post_build_step](images/archi.png)
 
 At this point, our architecture has pretty much been built, lets taste it by making a change on any file on the Github repository and then push it to see the triggered job
-![git_push](images/15.github_push.jpg)
+
 
 The console output shows the created job and the successful build.
 In this case the code on Github was built into an artifact on our Jenkins server workspace. Find the artificat by checking the status tab of the completed job .
-![new_build](images/16.new_build.jpg)
-![persisted_archive](images/17.persisted_archive.jpg)
+![new_build](images/output.png)
+
 
 Our created artifact can be found on our local terminal too at this path 
 `/var/lib/jenkins/jobs/tooling_github/builds/<build_number>/archive/`
-![artifact_terminal](images/18.artifact_terminal.jpg)
+
 
 
 ## Configuring Jenkins To Copy Files(Artifact) to NFS Server
