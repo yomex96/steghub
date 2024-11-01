@@ -49,9 +49,13 @@ Since Jenkins runs on default port 8080, open this port on the Security Group in
 ![jenkins_rule](images/port.png)
 
 Jenkins is up and running, copy and paste jenkins server public ip address appended with port 8080 on a web server to gain access to the interactive console. `<jenkins_server_public_ip_address>:8080`
+
 ![jenkins_install_success](images/rename.png)
 
 The admin password can be found in the `'/var/lib/jenkins/secrets/initialAdminPassword'` path on the server.
+```
+sudo cat /var/lib/jenkins/secrets/initialAdminPassword
+```
 
 ![suggested_installation](images/5.suggested_install.jpg)
 ![plugin_installation](images/6.plugin_installation.jpg)
