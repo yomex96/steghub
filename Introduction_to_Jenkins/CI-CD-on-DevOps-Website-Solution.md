@@ -83,11 +83,11 @@ Specify the particular trigger to use for triggering the job. Click "Configure" 
 
 ### 1. Configure triggering the job from GitHub webhook:
 
-![adding_build_triggers](images/13.adding_build_triggers.jpg)
+![adding_build_triggers](images/gitscm.png)
 
 ### 2. Configure "Post-build Actions" to archive all the files – files resulted from a build are called "artifacts".
 
-![post_build_step](images/14.post_build_step.jpg)
+![post_build_step](images/archi.png)
 
 At this point, our architecture has pretty much been built, lets taste it by making a change on any file on the Github repository and then push it to see the triggered job
 ![git_push](images/15.github_push.jpg)
