@@ -74,9 +74,8 @@ On the jenkins server, create a new freestyle job
 
 In configuration of the Jenkins freestyle job choose Git repository, provide there the link to the GitHub repository and credentials (user/password) so Jenkins could access files in the repository. Also specify the branch containing code
 
-![git_url_input](images/10.git_url_input.jpg)
-![specify_branch](images/11.specify_branch.jpg)
-![specify_credentials](images/12.specify-credentials.jpg)
+![git_url_input](images/credentials.png)
+
 
 ## Configuring Build Triggers
 
