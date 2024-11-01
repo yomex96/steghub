@@ -13,7 +13,7 @@ Here I introduce Jenkins to automate code delivery to the NFS server
 ## Jenkins Web Architecture For CI Builds
 #
  
-![my_jenkins_architecture](images/2022-10-05_050932.png)
+![my_jenkins_architecture](images/jenkins_structure.png)
 
 ## Installing Jenkins Server
 
