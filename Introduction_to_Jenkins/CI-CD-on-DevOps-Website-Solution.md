@@ -102,7 +102,7 @@ Our created artifact can be found on our local terminal too at this path
 
 
 
-## Configuring Jenkins To Copy Files(Artifact) to NFS Server
+
 # Configure Jenkins to copy files to NFS server via SSH
 
 Now we have our artifacts saved locally on Jenkins server, the next step is to copy them to our NFS server to /mnt/apps directory.
