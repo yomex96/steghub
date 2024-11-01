@@ -97,12 +97,12 @@ In this case the code on Github was built into an artifact on our Jenkins server
 ![new_build](images/output.png)
 
 
-Our created artifact can be found on our local terminal too at this path 
-`/var/lib/jenkins/jobs/tooling_github/builds/<build_number>/archive/`
+By default, the artifacts are stored on Jenkins server locally
 
+```
+ls /var/lib/jenkins/jobs/tooling_github/builds/<build_number>/archive/
 
-
-
+```
 # Configure Jenkins to copy files to NFS server via SSH
 
 Now we have our artifacts saved locally on Jenkins server, the next step is to copy them to our NFS server to /mnt/apps directory.
