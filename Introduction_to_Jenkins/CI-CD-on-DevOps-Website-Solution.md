@@ -70,7 +70,7 @@ Webhook should look like this `<public_ip_of_jenkins_server>:8080/github-webhook
 ## Creating Job and Configuring GIT Based Push Trigger
 
 On the jenkins server, create a new freestyle job
-![creating_job](images/9.creating_job.jpg)
+![creating_job](images/freestyle.png)
 
 In configuration of the Jenkins freestyle job choose Git repository, provide there the link to the GitHub repository and credentials (user/password) so Jenkins could access files in the repository. Also specify the branch containing code
 
