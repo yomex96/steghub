@@ -171,7 +171,7 @@ cat /mnt/apps/README.md
 Now make a new change on the source code and push to github, Jenkins builds an artifact by downloading the code into its workspace based on the latest commit and via SSH it publishes the artifact into the NFS Server to update the source code. 
 
 This is seen by the change of name on the web application
-![](images/output.png)
+![](images/final.png)
 
 
 ## Challenges Encountered and Solutions
