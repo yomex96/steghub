@@ -58,7 +58,7 @@ sudo apt install nginx
 ```
 ![](./images/update.png)
 
-![](./images/security_group.png)
+![](./images/nginx.png)
 
 
 
