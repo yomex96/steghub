@@ -90,7 +90,7 @@ server {
 
 Comment out this line: ```# include /etc/nginx/sites-enabled/*;```
 
-![](./images/nginx config.png)
+![](./images/nginx_config.png)
 
 
 3. Restart Nginx to apply the changes:
