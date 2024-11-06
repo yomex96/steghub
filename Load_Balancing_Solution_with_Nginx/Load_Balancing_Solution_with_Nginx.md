@@ -40,7 +40,7 @@ Target architecture will look like:
 * Open TCP port 443 for HTTPS connections.
 
 * Update the /etc/hosts file for local DNS with the web servers' names (e.g., Web1, Web2) and their local IP addresses.
-![](./images/security%group.png)
+![](./images/security_group.png)
 
 ![](./images/)
 
