@@ -86,7 +86,7 @@ server {
     }
 }
 ```
-![](./images/)
+
 
 Comment out this line: ```# include /etc/nginx/sites-enabled/*;```
 
@@ -106,7 +106,7 @@ sudo systemctl status nginx
 
 1. Register a Domain Name using any domain registrar (e.g., GoDaddy, Bluehost).
 
-![image 7](https://github.com/Captnfresh/Load-Balancer_Solution_With_Nginx/blob/main/LBS%20with%20Nginx%20and%20SSL%20and%20TLS/image%207.jpg)
+![](./images/)
 
 2. Assign an Elastic IP to your Nginx server and associate your domain name with this Elastic IP.
 
