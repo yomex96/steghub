@@ -106,13 +106,14 @@ sudo systemctl status nginx
 
 1. Register a Domain Name using any domain registrar (e.g., GoDaddy, Bluehost).
 
-![](./images/)
+
 
 2. Assign an Elastic IP to your Nginx server and associate your domain name with this Elastic IP.
-
+![](./images/elasticip.png)
 3. Follow the guide below to allocate an Elastic IP and associate it with your EC2 instance.
+![](./images/elasticip2.png)
 
-![image 8](https://github.com/Captnfresh/Load-Balancer_Solution_With_Nginx/blob/main/LBS%20with%20Nginx%20and%20SSL%20and%20TLS/image%208.jpg)
+
 
 4. Update the A record in your domain registrar to point to the Elastic IP of your Nginx server.
 
@@ -133,7 +134,9 @@ server_name www.<your-domain-name>.com;
 ```
 sudo systemctl restart nginx
 ```
-![image 9](https://github.com/Captnfresh/Load-Balancer_Solution_With_Nginx/blob/main/LBS%20with%20Nginx%20and%20SSL%20and%20TLS/image%209.jpg)
+
+![](./images/steghub_login.png)
+
 
 ## Step 3: Install Certbot and Request an SSL Certificate
 
@@ -145,7 +148,8 @@ sudo systemctl status snapd
 ```
 sudo snap install --classic certbot
 ```
-![image 12](https://github.com/Captnfresh/Load-Balancer_Solution_With_Nginx/blob/main/LBS%20with%20Nginx%20and%20SSL%20and%20TLS/image%2012.jpg)
+![](./images/snapdstatus.png)
+
 
 3. Request an SSL certificate:
 
@@ -154,11 +158,9 @@ sudo ln -s /snap/bin/certbot /usr/bin/certbot
 sudo certbot --nginx
 ```
 
-![image 13](https://github.com/Captnfresh/Load-Balancer_Solution_With_Nginx/blob/main/LBS%20with%20Nginx%20and%20SSL%20and%20TLS/image%2013.jpg)
 
 Test secured access to your website by visiting `https://<your-domain-name>.com`.
-
-![image 14](https://github.com/Captnfresh/Load-Balancer_Solution_With_Nginx/blob/main/LBS%20with%20Nginx%20and%20SSL%20and%20TLS/image%2014.jpg)
+![](./images/homepage.png)
 
 ## Step 4: Set Up SSL/TLS Certificate Renewal
 
@@ -178,13 +180,7 @@ crontab -e
 * */12 * * * root /usr/bin/certbot renew > /dev/null 2>&1
 ```
 
-![image 11](https://github.com/Captnfresh/Load-Balancer_Solution_With_Nginx/blob/main/LBS%20with%20Nginx%20and%20SSL%20and%20TLS/image%2011.jpg)
-
 We have now successfuly configured a Nginx based Load Balancer for our webservers, ensured it can be accessed by a domain name and has SSL installed for security.
-
-# Conclusion:
-
-This project demonstrates how to set up a load balancer using Nginx to distribute traffic across multiple web servers. It's designed to improve the performance and reliability of web applications by evenly distributing incoming requests.
 
 ## Architecture: The setup includes:
 1. Two or more backend web servers (Apache in this case)
@@ -208,3 +204,8 @@ This project demonstrates how to set up a load balancer using Nginx to distribut
    d. Testing the Setup:
    * Verify that the load balancer is correctly distributing requests
    * Test failover scenarios by stopping one of the web servers
+
+
+# Conclusion:
+
+This project demonstrates how to set up a load balancer using Nginx to distribute traffic across multiple web servers. It's designed to improve the performance and reliability of web applications by evenly distributing incoming requests.
