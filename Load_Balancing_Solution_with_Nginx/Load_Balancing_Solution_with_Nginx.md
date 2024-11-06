@@ -40,10 +40,13 @@ Target architecture will look like:
 * Open TCP port 443 for HTTPS connections.
 
 * Update the /etc/hosts file for local DNS with the web servers' names (e.g., Web1, Web2) and their local IP addresses.
+![](./images/security group.png)
 
-![image 2](https://github.com/Captnfresh/Load-Balancer_Solution_With_Nginx/blob/main/LBS%20with%20Nginx%20and%20SSL%20and%20TLS/image%202.jpg)
+![](./images/)
 
-![image 3](https://github.com/Captnfresh/Load-Balancer_Solution_With_Nginx/blob/main/LBS%20with%20Nginx%20and%20SSL%20and%20TLS/image%203.jpg)
+
+![](./images/host.png)
+
 
 
 2. Install and Configure Nginx as a Load Balancer.
