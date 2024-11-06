@@ -42,7 +42,7 @@ Target architecture will look like:
 * Update the /etc/hosts file for local DNS with the web servers' names (e.g., Web1, Web2) and their local IP addresses.
 ![](./images/security_group.png)
 
-![](./images/)
+
 
 
 ![](./images/host.png)
@@ -86,9 +86,12 @@ server {
     }
 }
 ```
+![](./images/)
+
 Comment out this line: ```# include /etc/nginx/sites-enabled/*;```
 
-![image 6](https://github.com/Captnfresh/Load-Balancer_Solution_With_Nginx/blob/main/LBS%20with%20Nginx%20and%20SSL%20and%20TLS/image%206.jpg)
+![](./images/nginx config.png)
+
 
 3. Restart Nginx to apply the changes:
 
@@ -96,7 +99,8 @@ Comment out this line: ```# include /etc/nginx/sites-enabled/*;```
 sudo systemctl restart nginx
 sudo systemctl status nginx
 ```
-![iamge 7](https://github.com/Captnfresh/Load-Balancer_Solution_With_Nginx/blob/main/LBS%20with%20Nginx%20and%20SSL%20and%20TLS/iamge%207.jpg)
+![](./images/nginx_status.png)
+
 
 ## Part 2: Register a Domain and Configure SSL/TLS Certificates
 
