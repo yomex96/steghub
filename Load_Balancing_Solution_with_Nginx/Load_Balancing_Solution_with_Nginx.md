@@ -207,38 +207,40 @@ We have now successfuly configured a Nginx based Load Balancer for our webserver
 
 ## Benefits of Nginx Load Balancer with SSL/TLS Configuration
 
-*1.Improved Performance and Scalability:*
+**1.Improved Performance and Scalability:**
 
 Nginx efficiently distributes incoming requests across multiple web servers, balancing the load. This setup allows for handling a larger number of simultaneous requests, improving the overall performance and enabling the system to scale as demand increases.
 
-*Enhanced Security:*
+**2. Enhanced Security:**
 
 SSL/TLS encrypts data in transit, protecting it from Man-in-the-Middle (MITM) attacks and ensuring sensitive data, like login credentials and personal information, remains secure.
 Using Certbot to automate SSL certificate issuance and renewal with Let's Encrypt ensures the site remains secure without requiring manual intervention for certificate management.
 
-*Increased Reliability and High Availability:*
+**3. ncreased Reliability and High Availability:**
 
 By distributing traffic across multiple web servers, the load balancer reduces the risk of a single point of failure. If one server goes down, Nginx can automatically redirect traffic to available servers, maintaining service continuity.
 Elastic IP configuration allows users to access the Nginx load balancer reliably, even if the instance changes due to scaling or maintenance.
 
-*Flexible and Customizable Traffic Management:*
+**4. Flexible and Customizable Traffic Management:**
 
 Nginx provides options to configure advanced load balancing algorithms and settings. You can prioritize certain servers or adjust server weights to handle high-traffic scenarios and optimize resource use.
 
-*Cost-Efficient Scaling:*
+**5. Cost-Efficient Scaling:**
 
 You can scale horizontally by adding more web servers to handle increased demand instead of investing in a single, powerful server. This horizontal scaling is often more cost-effective for growing applications.
-Challenges of Nginx Load Balancer with SSL/TLS Configuration
-Complex Setup and Maintenance:
+
+# Challenges of Nginx Load Balancer with SSL/TLS Configuration
+
+**1.Complex Setup and Maintenance:**
 
 Configuring and managing an Nginx load balancer along with SSL/TLS certificates requires careful setup and an understanding of network and server management.
 Ongoing maintenance, including SSL certificate renewals and ensuring the load balancer functions correctly as the server environment changes, can add complexity.
 
-*Potential Downtime During Configuration:*
+**2. Potential Downtime During Configuration:**
 
 Improper configuration can lead to downtime if the load balancer isn’t correctly set up to route traffic, or if SSL/TLS settings cause issues with connections. Testing each part thoroughly is essential to avoid service interruptions.
 
-*Certificate Management Overhead:*
+**3. Certificate Management Overhead:**
 
 While Certbot automates SSL certificate management, there may still be occasional manual troubleshooting required. Issues can arise if the domain or DNS configuration changes or if there are issues with Let's Encrypt's validation process.
 
