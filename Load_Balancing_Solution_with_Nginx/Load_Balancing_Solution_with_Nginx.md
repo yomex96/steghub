@@ -24,9 +24,9 @@ This project consists of two parts:
 
 Target architecture will look like:
 
-![](./images/3.hosts.jpg)
+![](./images/diagram.png)
 
-![image 1](https://github.com/Captnfresh/Load-Balancer_Solution_With_Nginx/blob/main/LBS%20with%20Nginx%20and%20SSL%20and%20TLS/image%201.jpg)
+
 
 
 ## Part 1: Configure Nginx as a Load Balancer
