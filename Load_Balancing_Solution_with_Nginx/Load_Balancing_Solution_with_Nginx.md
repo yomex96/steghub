@@ -33,7 +33,7 @@ Target architecture will look like:
 
 1. Set Up Nginx on an EC2 Instance:
 
-* Create an EC2 VM based on Ubuntu Server 20.04 LTS, and name it Nginx LB.
+* Create an EC2 VM based on Ubuntu Server 20.04 LTS, and name it .
 
 * Open TCP port 80 for HTTP connections.
 
