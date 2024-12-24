@@ -1,4 +1,4 @@
-# ANSIBLE CONFIGURATION MANAGEMENT – AUTOMATE PROJECT 7 TO 10
+# ANSIBLE CONFIGURATION MANAGEMENT – 
 
 You have been implementing some interesting projects up untill now, and that is awesome.
 
@@ -22,7 +22,6 @@ can only access it through a Jump Server – it provide better security and redu
 On the diagram below the Virtual Private Network (VPC) is divided into two subnets – Public subnet has public IP addresses and Private
 subnet is only reachable by private IP addresses.
 
-![6033](https://user-images.githubusercontent.com/85270361/210153615-ea6cf398-05d3-45d0-9ea4-6daffac7fa4c.PNG)
 
 When you reach Project 15, you will see a Bastion host in proper action. But for now, we will develop Ansible scripts to simulate
 the use of a Jump box/Bastion host to access our Web Servers.
