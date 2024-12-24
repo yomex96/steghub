@@ -1,4 +1,4 @@
-# ANSIBLE CONFIGURATION MANAGEMENT – 
+# ANSIBLE CONFIGURATION MANAGEMENT 
 
 You have been implementing some interesting projects up untill now, and that is awesome.
 
