@@ -68,10 +68,10 @@ Jenkins does not use a default username or password anymore due to security conc
 
 1. Locate the Initial Admin Password
 The initial admin password is stored in the following file:
-
-'''
+```
 sudo cat /var/lib/jenkins/secrets/initialAdminPassword
-'''
+```
+
 This will display a string of characters that you can use as the initial admin password.
 
 2. Open Jenkins in Your Browser
@@ -91,9 +91,9 @@ If you cannot retrieve the initial password or forget the admin password:
 
 Stop Jenkins:
 
-'''
+```
 sudo systemctl stop jenkins
-'''
+```
 
 Open the config.xml file:
 
