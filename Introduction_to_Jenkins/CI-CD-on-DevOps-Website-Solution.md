@@ -112,7 +112,7 @@ sudo systemctl start jenkins
 ```
 Access Jenkins without login and create a new admin user. Once done, re-enable security by setting <useSecurity> back to true.
 
-5. Retrieve Existing Users
+# Retrieve Existing Users
 If you need to list existing users:
 
 Check the Jenkins users directory:
