@@ -138,6 +138,16 @@ ssh-add <path-to-private-key>
 ssh-add -l
 ```
 
+or
+
+```
+Host jenkins-machine
+  HostName <EC2_PUBLIC_IP>  # Public IP address of your EC2 instance
+  User ubuntu               # Default user for Ubuntu AMI; replace if different
+  IdentityFile ~/.ssh/your-key.pem  # Path to your private key file
+  ForwardAgent yes         # This allows SSH forwarding of your local agent
+```
+
 2. Now, ssh into Jenkins-Ansible server using ssh-agent
 ```
 ssh -A ubuntu@public-ip
@@ -158,6 +168,7 @@ ssh -A ubuntu@public-ip
 
 [lb]
 <Load-Balancer-Private-IP-Address> ansible_ssh_user=ubuntu
+
 ```
 ![image 18](https://github.com/Captnfresh/Ansible-Configuration-Management/blob/main/Ansible%20Configuration%20Management/image%2018.jpg)
 Each server group (nfs, webservers, db, lb) represents a different function within your infrastructure. You can refer to each group individually within playbooks to apply specific configurations.
@@ -334,6 +345,15 @@ Before executing the playbook, ensure your VSCode is properly configured to conn
         User ubuntu
         IdentityFile <path-to-private-key>
      ```
+
+     or
+   ```
+   Host jenkins-machine
+  HostName <EC2_PUBLIC_IP>  # Public IP address of your EC2 instance
+  User ubuntu               # Default user for Ubuntu AMI; replace if different
+  IdentityFile ~/.ssh/your-key.pem  # Path to your private key file
+  ForwardAgent yes         # This allows SSH forwarding of your local agent
+```
 
      See example:
    ```
