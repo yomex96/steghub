@@ -61,6 +61,71 @@ sudo cat /var/lib/jenkins/secrets/initialAdminPassword
 
 ![login_success](images/homepage.png)
 
+## forgotten password and username
+
+
+Jenkins does not use a default username or password anymore due to security concerns. Instead, upon the first installation, Jenkins generates an initial admin password and stores it in a specific file. Here’s how to find the login details:
+
+1. Locate the Initial Admin Password
+The initial admin password is stored in the following file:
+
+'''
+sudo cat /var/lib/jenkins/secrets/initialAdminPassword
+'''
+This will display a string of characters that you can use as the initial admin password.
+
+2. Open Jenkins in Your Browser
+Open your Jenkins URL in a web browser:
+
+If hosted locally: http://localhost:8080
+If on an EC2 instance: http://<Public-IP>:8080 or http://<Public-DNS>:8080
+Use the initial admin password retrieved from the file to log in.
+
+3. Create Admin User
+After logging in for the first time:
+
+Jenkins will prompt you to customize the instance.
+You’ll be asked to create an admin user with a username and password. Provide your details here and save them securely for future logins.
+4. Reset Jenkins Password (If Necessary)
+If you cannot retrieve the initial password or forget the admin password:
+
+Stop Jenkins:
+
+'''
+sudo systemctl stop jenkins
+'''
+
+Open the config.xml file:
+
+
+'''
+sudo nano /var/lib/jenkins/config.xml
+Search for the <useSecurity> tag and set its value to false:
+'''
+
+
+<useSecurity>false</useSecurity>
+Save the file, then restart Jenkins:
+
+'''
+sudo systemctl start jenkins
+'''
+Access Jenkins without login and create a new admin user. Once done, re-enable security by setting <useSecurity> back to true.
+
+5. Retrieve Existing Users
+If you need to list existing users:
+
+Check the Jenkins users directory:
+
+bash
+Copy code
+ls /var/lib/jenkins/users
+View the config.xml for specific user details:
+
+bash
+Copy code
+cat /var/lib/jenkins/users/<username>/config.xml
+
 ## Attaching WebHook to Jenkins Server
 
 On the github repository that contains application code, create a webhook to connect to the jenkins job. To create webhook, go to the settings tab on the github repo and click on webhooks.
