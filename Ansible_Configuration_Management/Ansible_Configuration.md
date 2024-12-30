@@ -335,6 +335,15 @@ Before executing the playbook, ensure your VSCode is properly configured to conn
         IdentityFile <path-to-private-key>
      ```
 
+     or
+   ```
+   Host jenkins-machine
+  HostName <EC2_PUBLIC_IP>  # Public IP address of your EC2 instance
+  User ubuntu               # Default user for Ubuntu AMI; replace if different
+  IdentityFile ~/.ssh/your-key.pem  # Path to your private key file
+  ForwardAgent yes         # This allows SSH forwarding of your local agent
+```
+
      See example:
    ```
    Host 3.229.14.47
