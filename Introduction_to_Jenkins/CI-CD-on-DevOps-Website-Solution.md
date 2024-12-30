@@ -98,18 +98,18 @@ sudo systemctl stop jenkins
 Open the config.xml file:
 
 
-'''
+```
 sudo nano /var/lib/jenkins/config.xml
 Search for the <useSecurity> tag and set its value to false:
-'''
+```
 
 
 <useSecurity>false</useSecurity>
 Save the file, then restart Jenkins:
 
-'''
+```
 sudo systemctl start jenkins
-'''
+```
 Access Jenkins without login and create a new admin user. Once done, re-enable security by setting <useSecurity> back to true.
 
 5. Retrieve Existing Users
@@ -117,14 +117,15 @@ If you need to list existing users:
 
 Check the Jenkins users directory:
 
-bash
-Copy code
+```
 ls /var/lib/jenkins/users
+```
+
 View the config.xml for specific user details:
 
-bash
-Copy code
+```
 cat /var/lib/jenkins/users/<username>/config.xml
+```
 
 ## Attaching WebHook to Jenkins Server
 
