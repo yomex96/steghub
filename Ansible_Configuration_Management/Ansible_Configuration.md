@@ -338,6 +338,10 @@ Run the playbook command:
 ansible-playbook -i inventory/dev.yml playbooks/common.yml
 ```
 
+```
+wireshark --version
+```
+
 This command does the following: * Uses -i inventory/dev.yml to specify the inventory file for the development environment. * Targets the playbooks/common.yml playbook. * Note: Make sure you’re in the ansible-config-mgt directory before running the command.
 
 ## Key Learnings
