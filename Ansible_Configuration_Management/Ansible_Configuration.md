@@ -104,6 +104,9 @@ The development phase of DevOps requires proper coding tools, and setting up you
 ```
 git checkout -b feature/prj-11-ansible-config-mgt
 ```     
+![image 3](images/git-branches.png)
+
+![image 3](images/git-branches.png)
 
 2. Push the Branch to GitHub: After creating the branch, push it to GitHub to keep it available for tracking and collaboration:
 
