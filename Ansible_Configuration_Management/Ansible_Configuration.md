@@ -8,10 +8,10 @@
 
 ![database_test](images/test_database.png)
 
-![image 1](images/Ec2_instance png.png)
+![image 1](images/Ec2_instance.png)
 
 
-![image 1](images/all.png)
+
 
 2. In your GitHub account, create a new repository named `ansible-config-mgt`. This repository will store your Ansible configurations, playbooks, and inventory files.
 
