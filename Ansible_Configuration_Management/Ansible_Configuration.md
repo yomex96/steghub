@@ -10,6 +10,9 @@
 
 ![image 1](images/Ec2_instance png.png)
 
+
+![image 1](images/all.png)
+
 2. In your GitHub account, create a new repository named `ansible-config-mgt`. This repository will store your Ansible configurations, playbooks, and inventory files.
 
 ![image 2](https://github.com/Captnfresh/Ansible-Configuration-Management/blob/main/Ansible%20Configuration%20Management/image%202.jpg)
