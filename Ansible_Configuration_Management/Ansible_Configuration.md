@@ -191,7 +191,7 @@ ssh -A ubuntu@public-ip
 <Load-Balancer-Private-IP-Address> ansible_ssh_user=ubuntu
 
 ```
-![image 3](images/ssh.png)
+![image 3](images/inventory.png)
 
 Each server group (nfs, webservers, db, lb) represents a different function within your infrastructure. You can refer to each group individually within playbooks to apply specific configurations.
 
@@ -227,7 +227,8 @@ Each server group (nfs, webservers, db, lb) represents a different function with
         name: wireshark
         state: latest
 ```
-![image 19](https://github.com/Captnfresh/Ansible-Configuration-Management/blob/main/Ansible%20Configuration%20Management/image%2019.jpg)
+![image 3](images/common.png)
+
 
 Examine the code above and try to make sense out of it. This playbook is divided into two parts, each of them is intended to perform the same task: install wireshark utility (or make sure it is updated to the latest version) on RHEL 9 and Ubuntu servers. It uses root user to perform this task and respective package manager: yum for RHEL 9 and apt for Ubuntu.
 
