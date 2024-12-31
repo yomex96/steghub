@@ -351,20 +351,20 @@ Configuring SSH: Configured ssh access and handled key-based authentication, ens
 
 Ansible Playbook Structure: Gained a strong understanding of structuring playbooks to automate common tasks, manage dependencies, and execute sequential commands.
 
-# Challenges and Solutions
+## Challenges and Solutions
 Challenge: SSH Authentication Issues
 Solution: Verified file paths and permissions for the SSH keys and ensured the IdentityFile path in the Ansible inventory and SSH config was accurate and correctly formatted.
 
-# Challenge: "Permission Denied" errors on remote servers
+## Challenge: "Permission Denied" errors on remote servers
 Solution: Confirmed that the correct user (e.g., ubuntu, ec2-user) was set up on each server. This was resolved by specifying the exact username in the Ansible inventory and ensuring the keys had the correct permissions.
 
-# Challenge: Issues with YAML Formatting in Inventory Files
+## Challenge: Issues with YAML Formatting in Inventory Files
 Solution: Ensured proper YAML syntax, particularly around indentation and structure, which is critical in Ansible files. Simplified formatting and used tools to validate YAML files before deployment.
 
-# Challenge: Host Key Verification Failures
+## Challenge: Host Key Verification Failures
 Solution: Used ssh-keygen -R to clear known hosts entries, added host keys permanently to avoid prompting, and used the -i option to specify the key file directly during testing.
 
-## Conclusion
+# Conclusion
 We have successfully set up our infrastructure to automate configuration mangaement tasks with ansible.
 
    
