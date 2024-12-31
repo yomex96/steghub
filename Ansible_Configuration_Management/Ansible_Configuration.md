@@ -315,13 +315,15 @@ git push origin feature/prj-11-ansible-config-mgt
 git checkout main
 git pull origin main
 ```
-![image 26](https://github.com/Captnfresh/Ansible-Configuration-Management/blob/main/Ansible%20Configuration%20Management/image%2026.jpg)
+
 
 ### After the changes are merged, Jenkins will automatically trigger a build, archiving the files in the following directory:
 ```
 /var/lib/jenkins/jobs/ansible/builds/<build_number>/archive/
 ```
-![image 27](https://github.com/Captnfresh/Ansible-Configuration-Management/blob/main/Ansible%20Configuration%20Management/image%2027.jpg)
+
+ ![image 3](images/final-result.png)
+
 
 
 ## Step 7 - Run the First Ansible Test
