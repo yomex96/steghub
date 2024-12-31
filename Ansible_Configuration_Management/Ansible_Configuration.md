@@ -117,6 +117,8 @@ git push -u origin feature/prj-11-ansible-config-mgt
 
 ![image 3](images/git-branches2.png)
 
+![image 3](images/ansible-branches.png)
+
 
 3. Create a directory and name it playbooks - it will be used to store all playbook files.
 ```
