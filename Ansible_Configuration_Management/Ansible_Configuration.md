@@ -424,11 +424,10 @@ Access the instances that was created from the start of this project from the Je
 
    ```
    ssh -A ubuntu@<Jenkins-Ansible-Instance-Public-IP>
-   ```
+
 
 5. Connect to your servers locally
 
-   ```
 ssh <Private-IP-address-of-instance>
    ```
 
