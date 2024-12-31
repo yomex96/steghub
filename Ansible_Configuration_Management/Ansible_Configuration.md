@@ -138,7 +138,7 @@ touch common.yml
 ```
 touch dev.yml staging.yml uat.yml prod.yml
 ```
-![image 16](https://github.com/Captnfresh/Ansible-Configuration-Management/blob/main/Ansible%20Configuration%20Management/image%2016.jpg)
+![image 3](images/ansible-files.png)
 
 ## Step 4 - Set up an Ansible Inventory.
 
