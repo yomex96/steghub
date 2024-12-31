@@ -140,6 +140,7 @@ touch dev.yml staging.yml uat.yml prod.yml
 ```
 ![image 3](images/ansible-files.png)
 
+
 ## Step 4 - Set up an Ansible Inventory.
 
 An Ansible inventory file defines the hosts and groups of hosts upon which commands, modules, and tasks in a playbook operate. Since our intention is to execute Linux commands on remote hosts, and ensure that it is the intended configuration on a particular server that occurs. It is important to have a way to organize our hosts in such an Inventory. Save the below inventory structure in the inventory/dev file to start configuring development servers. Ensure to replace the IP addresses according to your own setup.
@@ -169,7 +170,7 @@ Host jenkins-machine
 ```
 ssh -A ubuntu@public-ip
 ```
-![image 17](https://github.com/Captnfresh/Ansible-Configuration-Management/blob/main/Ansible%20Configuration%20Management/image%2017.jpg)
+![image 3](images/ssh.png)
 
 3. Update your inventory/dev.yml file with this snippet of code:
 ```
@@ -187,7 +188,8 @@ ssh -A ubuntu@public-ip
 <Load-Balancer-Private-IP-Address> ansible_ssh_user=ubuntu
 
 ```
-![image 18](https://github.com/Captnfresh/Ansible-Configuration-Management/blob/main/Ansible%20Configuration%20Management/image%2018.jpg)
+![image 3](images/ssh.png)
+
 Each server group (nfs, webservers, db, lb) represents a different function within your infrastructure. You can refer to each group individually within playbooks to apply specific configurations.
 
 
