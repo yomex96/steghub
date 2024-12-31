@@ -429,11 +429,10 @@ Access the instances that was created from the start of this project from the Je
 
 5. Connect to your servers locally
 
-   ```
-   
-   ssh <Private IP address of instance>
-   
-   ```
+   ```   
+   ssh <Private-IP-address-of-instance>
+    ```
+
    
 
 
