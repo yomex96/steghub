@@ -15,7 +15,7 @@
 
 2. In your GitHub account, create a new repository named `ansible-config-mgt`. This repository will store your Ansible configurations, playbooks, and inventory files.
 
-![image 2](https://github.com/Captnfresh/Ansible-Configuration-Management/blob/main/Ansible%20Configuration%20Management/image%202.jpg)
+![image 2](images/Ec2_instance.png)
 
 3. Install Ansible on your Jenkins-Ansible ec2 instance. Update your package index:
 
