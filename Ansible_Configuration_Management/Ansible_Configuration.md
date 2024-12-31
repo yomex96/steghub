@@ -397,7 +397,6 @@ Before executing the playbook, ensure your VSCode is properly configured to conn
      
      Replace `<Jenkins-Ansible-Public-IP>` and `<path-to-private-key>` with your instance’s IP and the path to your SSH key, respectively.
 
-![image 31](https://github.com/Captnfresh/Ansible-Configuration-Management/blob/main/Ansible%20Configuration%20Management/image%2031.jpg)
 
 ### Quick Step : 
 
@@ -429,9 +428,9 @@ Access the instances that was created from the start of this project from the Je
 
 5. Connect to your servers locally
 
-
-   ssh <Private-IP-address-of-instance>
-
+   ```
+ssh <Private-IP-address-of-instance>
+   ```
 
    
 
