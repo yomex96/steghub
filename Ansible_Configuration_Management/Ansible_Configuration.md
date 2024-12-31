@@ -29,7 +29,7 @@ sudo apt update
 ```
 sudo apt install ansible
 ```
-![image 3](ansible-version.png)
+![image 3](images/ansible-version.png)
 
 5. Verify the installation by checking the Ansible version:
 
