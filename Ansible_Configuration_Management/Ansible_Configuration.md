@@ -106,16 +106,16 @@ git checkout -b feature/prj-11-ansible-config-mgt
 ```     
 ![image 3](images/git-branches.png)
 
-![image 3](images/git-branches.png)
 
 2. Push the Branch to GitHub: After creating the branch, push it to GitHub to keep it available for tracking and collaboration:
 
 ```
 git push -u origin feature/prj-11-ansible-config-mgt
 ```
-![image 13](https://github.com/Captnfresh/Ansible-Configuration-Management/blob/main/Ansible%20Configuration%20Management/image%2013.jpg)
 
-![image 14](https://github.com/Captnfresh/Ansible-Configuration-Management/blob/main/Ansible%20Configuration%20Management/image%2014.jpg)
+
+![image 3](images/git-branches2.png)
+
 
 3. Create a directory and name it playbooks - it will be used to store all playbook files.
 ```
