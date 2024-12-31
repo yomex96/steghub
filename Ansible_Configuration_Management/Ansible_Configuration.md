@@ -61,6 +61,7 @@ Now that Ansible is installed, let's automate the integration between Jenkins an
 
 
 10. Check that the build artifacts are saved in the specified directory.
+    
 ```
 ls /var/lib/jenkins/jobs/Ansible/builds/1/archive/
 ```
