@@ -338,6 +338,7 @@ Run the playbook command:
 ansible-playbook -i inventory/dev.yml playbooks/common.yml
 ```
 
+ ![image 3](images/diagram-flow.png)
 ```
 wireshark --version
 ```
