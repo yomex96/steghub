@@ -126,7 +126,8 @@ mkdir playbooks
 ```
 mkdir inventory
 ```
-![image 15](https://github.com/Captnfresh/Ansible-Configuration-Management/blob/main/Ansible%20Configuration%20Management/image%2015.jpg)
+
+![image 3](images/ansible-files.png)
 
 5. Within the playbooks folder, create first playbook, and name it common.yml
 ```
