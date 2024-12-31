@@ -23,13 +23,14 @@
 ```
 sudo apt update
 ```
+![image 3](images/apt-update.png)
 
 4. Install Ansible:
 
 ```
 sudo apt install ansible
 ```
-![image 3](images/apt-update.png)
+
 
 5. Verify the installation by checking the Ansible version:
 
