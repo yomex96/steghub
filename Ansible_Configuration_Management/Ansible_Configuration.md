@@ -64,7 +64,7 @@ Now that Ansible is installed, let's automate the integration between Jenkins an
 ```
 ls /var/lib/jenkins/jobs/Ansible/builds/1/archive/
 ```
-![image 10](https://github.com/Captnfresh/Ansible-Configuration-Management/blob/main/Ansible%20Configuration%20Management/image%2010.jpg)
+
 
 ### Note: Trigger Jenkins project execution only for main (or master) branch
 
