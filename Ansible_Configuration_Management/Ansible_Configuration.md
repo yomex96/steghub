@@ -29,18 +29,19 @@ sudo apt update
 ```
 sudo apt install ansible
 ```
-![image 3](images/ansible-version.png)
+![image 3](images/apt-update.png)
 
 5. Verify the installation by checking the Ansible version:
 
 ```
 ansible --version
 ```
-![image 4](https://github.com/Captnfresh/Ansible-Configuration-Management/blob/main/Ansible%20Configuration%20Management/image%204.jpg)
+![image 3](images/ansible-version.png)
 
 Now that Ansible is installed, let's automate the integration between Jenkins and your GitHub repository:
 
 6. Create a Jenkins Freestyle Project: Head over to Jenkins and create a new freestyle project called ansible.
+
 
 ![image 5](https://github.com/Captnfresh/Ansible-Configuration-Management/blob/main/Ansible%20Configuration%20Management/image%205.jpg)
 
