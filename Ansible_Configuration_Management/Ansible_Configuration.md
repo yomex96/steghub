@@ -6,7 +6,7 @@
 
 1. Update the `Name` tag on your `Jenkins` EC2 instance to `Jenkins-Ansible`. We will use this server to run playbooks.
 
-![database_test](images/test_database.png)
+
 
 ![image 1](images/Ec2_instance.png)
 
