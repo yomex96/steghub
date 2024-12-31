@@ -59,6 +59,8 @@ Now that Ansible is installed, let's automate the integration between Jenkins an
 
 ![image 3](images/jenkins-result.png)
 
+![image 3](images/jenkins-console.png)
+
 
 10. Check that the build artifacts are saved in the specified directory.
     
