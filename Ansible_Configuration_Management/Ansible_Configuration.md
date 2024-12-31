@@ -431,11 +431,10 @@ Access the instances that was created from the start of this project from the Je
 
    ```
    ssh <Private IP address of instance>
+   
    ```
    
-![image 32](https://github.com/Captnfresh/Ansible-Configuration-Management/blob/main/Ansible%20Configuration%20Management/image%2032.jpg)
 
-![image 33](https://github.com/Captnfresh/Ansible-Configuration-Management/blob/main/Ansible%20Configuration%20Management/image%2033.jpg)
 
 ### Now that the servers have been connected to locally, we can continue the following steps
 
