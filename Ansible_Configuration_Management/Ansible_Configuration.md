@@ -257,7 +257,9 @@ Feel free to update this playbook with following tasks:
       timezone:
         name: Africa/Lagos
 ```
-![image 20](https://github.com/Captnfresh/Ansible-Configuration-Management/blob/main/Ansible%20Configuration%20Management/image%2020.jpg)
+
+![image 3](images/all2.png)
+
 
 Update the `common.yml` playbook with these new tasks.
 
@@ -286,25 +288,24 @@ git commit -m "Add common.yml playbook with initial configuration tasks"
 ```
 git push origin feature/prj-11-ansible-config-mgt
 ```
-![image 21](https://github.com/Captnfresh/Ansible-Configuration-Management/blob/main/Ansible%20Configuration%20Management/image%2021.jpg)
 
 5. Create a Pull Request (PR)
 * Navigate to Your Repository on GitHub and locate your branch.
 * Click on Pull Request to compare changes between the feature branch and main.
 * Add a Title and Description for the PR and submit it for review.
 
-![image 22](https://github.com/Captnfresh/Ansible-Configuration-Management/blob/main/Ansible%20Configuration%20Management/image%2022.jpg)
-
-![image 23](https://github.com/Captnfresh/Ansible-Configuration-Management/blob/main/Ansible%20Configuration%20Management/image%2023.jpg)
+  ![image 3](images/pull-request.png)
+  
+ ![image 3](images/pull-request2.png)
 
 6. Review and Merge the PR
 * Switch roles to review the PR. Check the code for accuracy and adherence to standards. If satisfied:
 * Approve the PR and Merge it into the main branch.
 * Once merged, delete the feature branch if no longer needed.
 
-![image 24](https://github.com/Captnfresh/Ansible-Configuration-Management/blob/main/Ansible%20Configuration%20Management/image%2024.jpg)
+   
+ ![image 3](images/pull-merge.png)
 
-![image 25](https://github.com/Captnfresh/Ansible-Configuration-Management/blob/main/Ansible%20Configuration%20Management/image%2025.jpg)
 
 7. On your local machine, switch back to main, pull the latest changes, and confirm the merge:
    
