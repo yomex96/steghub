@@ -429,9 +429,9 @@ Access the instances that was created from the start of this project from the Je
 
 5. Connect to your servers locally
 
-   ```   
+
    ssh <Private-IP-address-of-instance>
-    ```
+
 
    
 
@@ -470,9 +470,7 @@ It would display the ubuntu user or whatever username is configured for your Jen
     ```
     ansible-playbook -i inventory/dev.yml playbooks/common.yml
     ```
-![image 34](https://github.com/Captnfresh/Ansible-Configuration-Management/blob/main/Ansible%20Configuration%20Management/image%2034.jpg)
 
-13. This command does the following:
     * Uses `-i inventory/dev.yml` to specify the inventory file for the development environment.
     * Targets the `playbooks/common.yml` playbook.
     * Note: Make sure you’re in the `ansible-config-mgt` directory before running the command.
@@ -483,7 +481,6 @@ It would display the ubuntu user or whatever username is configured for your Jen
       ```
       wireshark --version
       ```
-![image 35](https://github.com/Captnfresh/Ansible-Configuration-Management/blob/main/Ansible%20Configuration%20Management/image%2035.jpg)
 
 If Wireshark is installed, these commands should output the path to Wireshark or display its version number.
 
