@@ -339,7 +339,7 @@ Before executing the playbook, ensure your VSCode is properly configured to conn
    * Search for the extension called Remote - SSH (developed by Microsoft).
    * Click Install to add it to VSCode.
 
-![image 28](https://github.com/Captnfresh/Ansible-Configuration-Management/blob/main/Ansible%20Configuration%20Management/image%2028.jpg)
+
 
 4. Configure the SSH Connection in VSCode
    * Access the Remote Explorer
