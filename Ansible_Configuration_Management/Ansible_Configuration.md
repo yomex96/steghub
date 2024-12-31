@@ -326,212 +326,48 @@ git pull origin main
 
 
 
-## Step 7 - Run the First Ansible Test
-After configuring the playbook and setting up inventory files, it’s time to test if the playbook runs correctly across your servers. This step verifies if Ansible is correctly applying configurations specified in the common.yml playbook.
+## Step 8 Run Ansible test
+We will verify if the playbook works :
 
-1. Connecting to the Instance in VS Code:
-Before executing the playbook, ensure your VSCode is properly configured to connect to your Jenkins-Ansible instance over SSH. This setup simplifies command execution directly from VSCode
+Change directory to ansible-config-mgt:
 
-2. Configuring Visual Studio Code (VSCode) for SSH access to your Jenkins-Ansible instance streamlines running Ansible commands, editing files, and viewing logs directly from your local VSCode interface. Below are the steps for setting up this SSH connection.
+cd ansible-config-mgt
+Run the playbook command:
 
-3. Install the VSCode Remote - SSH Extension
-   * Open VSCode and go to the Extensions sidebar (or press Ctrl+Shift+X).
-   * Search for the extension called Remote - SSH (developed by Microsoft).
-   * Click Install to add it to VSCode.
-
-
-
-4. Configure the SSH Connection in VSCode
-   * Access the Remote Explorer
-   * In VSCode, go to the Remote Explorer sidebar.
-   * Select SSH Targets from the dropdown.
-
-![image 29](https://github.com/Captnfresh/Ansible-Configuration-Management/blob/main/Ansible%20Configuration%20Management/image%2029.jpg)
-
-5. Add SSH Target:
-   * Click on the plus (+) icon next to SSH Targets.
-   * You will be prompted to Enter SSH Connection Command. This command specifies the user and IP address of your Jenkins-Ansible instance:
-  
-     ```
-     ssh ubuntu@<Jenkins-Ansible-Public-IP>
-     ```
-![image 30](https://github.com/Captnfresh/Ansible-Configuration-Management/blob/main/Ansible%20Configuration%20Management/image%2030.jpg)
-
-6. Select the SSH Configuration File:
-   * After entering the command, VSCode will prompt you to select an SSH configuration file (usually ~/.ssh/config if it exists).
-   * If you don’t have an SSH config file, VSCode will create one for you in your ~/.ssh/ directory.
-   
-7. Set Up SSH Key Authentication.
-   * To authenticate using your SSH private key, follow these steps to integrate it with your ssh-agent and configure VSCode:
-   *  Modify the SSH Config File:
-     - Open the `~/.ssh/config` file in a text editor.
-     - Add an entry for your Jenkins-Ansible instance:
-       
-     ```
-     Host jenkins-ansible
-        HostName <Jenkins-Ansible-Public-IP>
-        User ubuntu
-        IdentityFile <path-to-private-key>
-     ```
-
-     or
-   ```
-   Host jenkins-machine
-  HostName <EC2_PUBLIC_IP>  # Public IP address of your EC2 instance
-  User ubuntu               # Default user for Ubuntu AMI; replace if different
-  IdentityFile ~/.ssh/your-key.pem  # Path to your private key file
-  ForwardAgent yes         # This allows SSH forwarding of your local agent
+```
+ansible-playbook -i inventory/dev.yml playbooks/common.yml
 ```
 
-     See example:
-   ```
-   Host 3.229.14.47
-    HostName 3.229.14.47
-    User ubuntu
-  
-    Host 3.229.14.47
-      HostName 3.229.14.47
-      IdentityFile C:\\Users\\HP\\Downloads\\Jenkins.pem
-      User ubuntu
-   ```
-     
-     Replace `<Jenkins-Ansible-Public-IP>` and `<path-to-private-key>` with your instance’s IP and the path to your SSH key, respectively.
+This command does the following: * Uses -i inventory/dev.yml to specify the inventory file for the development environment. * Targets the playbooks/common.yml playbook. * Note: Make sure you’re in the ansible-config-mgt directory before running the command.
 
+## Key Learnings
+Fundamentals of Ansible Configuration Management: Learned how to set up and deploy configurations across multiple servers with Ansible.
 
-### Quick Step : 
+Inventory Management: Set up an inventory file to manage hosts in different groups (e.g., web, nfs, db servers).
 
-Access the instances that was created from the start of this project from the Jenkins-Ansible server to register the servers locally and allow access to the servers when trying to run the ansible playbook configuration. Follow the following steps from your GitBash.
+Error Troubleshooting: Developed troubleshooting skills for Ansible-related SSH issues and YAML syntax errors
 
-1. Start the SSH Agent:
+Configuring SSH: Configured ssh access and handled key-based authentication, ensuring secure connections to remote servers.
 
-   ```
-   eval `ssh-agent -s`
-   ```
+Ansible Playbook Structure: Gained a strong understanding of structuring playbooks to automate common tasks, manage dependencies, and execute sequential commands.
 
-2. Add Your Private Key to SSH Agent:
-
-   ```
-   ssh-add <path-to-private-key>
-   ```
-
-3. Verify SSH Key Addition:
-
-   ```
-   ssh-add -l
-   ```
-
-4. Enable Agent Forwarding for SSH into Jenkins-Ansible Server:
-
-   ```
-   ssh -A ubuntu@<Jenkins-Ansible-Instance-Public-IP>
-
-
-5. Connect to your servers locally
-
-ssh <Private-IP-address-of-instance>
-   ```
-
-   
-
-
-### Now that the servers have been connected to locally, we can continue the following steps
-
-
-8. Connect to the Jenkins-Ansible Instance:
-   * In the Remote Explorer sidebar in VSCode, under SSH Targets, you should see your newly added SSH target.
-   * Click on Connect next to jenkins-ansible (or the alias you created).
-   * VSCode will open a new remote window connected to your Jenkins-Ansible instance, allowing you to use the terminal, edit files, and run commands directly.
-   * Open the Ansible Project Directory in VSCode
-
-9. Once connected, navigate to your Ansible project directory (ansible-config-mgt) on the Jenkins-Ansible instance:
-    * In the remote VSCode window, open the File Explorer.
-    * Browse to the ansible-config-mgt directory and open it.
-    * You can now edit, save, and run commands directly in this directory, simplifying management and execution.
-
-10. To confirm the SSH connection works smoothly:
-    * Open the VSCode terminal (Ctrl+ or Terminal > New Terminal).
-    * Run a simple command to verify access:
-   
-      ```
-      whoami
-      ```
-It would display the ubuntu user or whatever username is configured for your Jenkins-Ansible instance.
-
-11. Navigate to your project directory:
-    ```
-    cd ansible-config-mgt
-
-    ```
-
-12. Run the Playbook with Ansible:
-    * To execute the common.yml playbook on the dev environment servers, use the following Ansible command. This command specifies the inventory file and playbook to use:
-    ```
-    ansible-playbook -i inventory/dev.yml playbooks/common.yml
-    ```
-
-    * Uses `-i inventory/dev.yml` to specify the inventory file for the development environment.
-    * Targets the `playbooks/common.yml` playbook.
-    * Note: Make sure you’re in the `ansible-config-mgt` directory before running the command.
-   
-14. Verify Installation on Each Server:
-    * After the playbook runs, verify that Wireshark was successfully installed on the servers. To confirm, SSH into each server and check the installation status by running:
-
-      ```
-      wireshark --version
-      ```
-
-If Wireshark is installed, these commands should output the path to Wireshark or display its version number.
-
-
-## Updated Ansible Architecture
-
-The updated architecture with Ansible now shows:
-   * Ansible Control Node (Jenkins-Ansible Server): Hosts your Ansible configuration and executes playbooks.
-   * Managed Nodes (Inventory Servers): The playbook applies tasks to these nodes (web servers, NFS, database, and load balancer servers).
-   * Inventory Files: Organize managed nodes by environment (e.g., dev, staging, uat, prod), allowing targeted configurations.
-
-Each playbook you create will ensure consistent and automated configurations across your environments, streamlining tasks like package installations, system configurations, and maintenance tasks on multiple servers.
-
-# Key Learnings
-
-1. Fundamentals of Ansible Configuration Management: Learned how to set up and deploy configurations across multiple servers with Ansible.
-
-2. Inventory Management: Set up an inventory file to manage hosts in different groups (e.g., web, nfs, db servers).
-
-3. Configuring SSH: Configured ssh access and handled key-based authentication, ensuring secure connections to remote servers.
-
-4. Ansible Playbook Structure: Gained a strong understanding of structuring playbooks to automate common tasks, manage dependencies, and execute sequential commands.
-
-5. Error Troubleshooting: Developed troubleshooting skills for Ansible-related SSH issues and YAML syntax errors.
-
-## Challenges and Solutions
-
-### Challenge: SSH Authentication Issues
+# Challenges and Solutions
+Challenge: SSH Authentication Issues
 Solution: Verified file paths and permissions for the SSH keys and ensured the IdentityFile path in the Ansible inventory and SSH config was accurate and correctly formatted.
 
-### Challenge: "Permission Denied" errors on remote servers
+# Challenge: "Permission Denied" errors on remote servers
 Solution: Confirmed that the correct user (e.g., ubuntu, ec2-user) was set up on each server. This was resolved by specifying the exact username in the Ansible inventory and ensuring the keys had the correct permissions.
 
-### Challenge: Issues with YAML Formatting in Inventory Files
+# Challenge: Issues with YAML Formatting in Inventory Files
 Solution: Ensured proper YAML syntax, particularly around indentation and structure, which is critical in Ansible files. Simplified formatting and used tools to validate YAML files before deployment.
 
-### Challenge: Host Key Verification Failures
-Solution: Used ssh-keygen -R <host> to clear known hosts entries, added host keys permanently to avoid prompting, and used the -i option to specify the key file directly during testing.
+# Challenge: Host Key Verification Failures
+Solution: Used ssh-keygen -R to clear known hosts entries, added host keys permanently to avoid prompting, and used the -i option to specify the key file directly during testing.
 
-### Challenge: Incorrect Hostnames and Inventory Parsing Warnings
-Solution: Ensured correct hostnames and restructured the inventory file format from dev.ini to dev.yml, improving parsing compatibility with Ansible.
+## Conclusion
+We have successfully set up our infrastructure to automate configuration mangaement tasks with ansible.
 
-### Challenge: Parsing Errors with YAML vs. INI File Inventory
-Solution: Changed the inventory file extension to .yml, adapting the syntax to be YAML-compliant, which helped Ansible correctly identify and load host configurations.
-
-### Challenge: Permission Denied for Ansible playbooks Execution
-Solution: Reviewed and corrected file permissions, ensuring that jenkins.pem had restricted permissions and was accessible to Ansible for running commands on remote servers.
+   
 
 
-## Additional Tips
-1. Patience and Persistence: You see this Patience and Grit, you need to have it because each step came with new hurdles, but staying persistent helped overcome the problems, making the solution more rewarding.
 
-2. Attention to Detail: Many issues were resolved by carefully rechecking file paths, syntax, and configurations, highlighting the importance of accuracy in configuration management.
-
-
-# IMPORTANT!!!! PLEASE DO NOT FORGET TO STOP YOUR INSTANCES AFTER YOU'RE DONE WITH THE PROJECT.
