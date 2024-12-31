@@ -44,7 +44,7 @@ Now that Ansible is installed, let's automate the integration between Jenkins an
 6. Create a Jenkins Freestyle Project: Head over to Jenkins and create a new freestyle project called ansible.
 
 
-![image 3](images/jenkins-console.png)
+![image 3](images/jenkins-job.png)
 
 7. Configure a webhook in GitHub and set the webhook to trigger ansible build.
 
