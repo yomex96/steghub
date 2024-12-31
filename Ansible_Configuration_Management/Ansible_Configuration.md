@@ -42,23 +42,23 @@ ansible --version
 Now that Ansible is installed, let's automate the integration between Jenkins and your GitHub repository:
 
 6. Create a Jenkins Freestyle Project: Head over to Jenkins and create a new freestyle project called ansible.
+![image 3](images/jenkins-job.png)
 
-
-![image 3](images/webhook.png)
 
 7. Configure a webhook in GitHub and set the webhook to trigger ansible build.
 
-![image 3](images/jenkins-job.png)
+![image 3](images/webhook.png)
 
-![image 7](https://github.com/Captnfresh/Ansible-Configuration-Management/blob/main/Ansible%20Configuration%20Management/image%207.jpg)
 
 8. Configure a Post-Build Action: configure a post-build action to archive all files generated during the build
 
-![image 8](https://github.com/Captnfresh/Ansible-Configuration-Management/blob/main/Ansible%20Configuration%20Management/image%208.jpg)
+
+
 
 9. To confirm everything is functioning as expected: Make a minor change in the README.md file in the `main` branch of your GitHub repository. Push the changes and verify that Jenkins automatically triggers the build.
 
-![image 9](https://github.com/Captnfresh/Ansible-Configuration-Management/blob/main/Ansible%20Configuration%20Management/image%209.jpg)
+![image 3](images/jenkins-result.png)
+
 
 10. Check that the build artifacts are saved in the specified directory.
 ```
