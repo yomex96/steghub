@@ -70,11 +70,16 @@ ls /var/lib/jenkins/jobs/Ansible/builds/1/archive/
 
 Now the setup would be like this image below:
 
+
+
 ![image 11](https://github.com/Captnfresh/Ansible-Configuration-Management/blob/main/Ansible%20Configuration%20Management/image%2011.jpg)
 
 Also, Every time you Stop/Start your Jenkins-Ansible server, you hsve to configure github webhook to a new IP address. In order to avoid it, It only makes sense to allocate an Elastic IP to your Jenkins-Ansible Ec2 instance.
 
-![image 12](https://github.com/Captnfresh/Ansible-Configuration-Management/blob/main/Ansible%20Configuration%20Management/image%2012.jpg)
+![image 3](images/elastic.png)
+
+![image 3](images/elastic.png2.png)
+
 
 
 ## Step 2 - Prepare Your Development Environment Using Visual Studio Code
