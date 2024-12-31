@@ -6,7 +6,9 @@
 
 1. Update the `Name` tag on your `Jenkins` EC2 instance to `Jenkins-Ansible`. We will use this server to run playbooks.
 
-![image 1](https://github.com/Captnfresh/Ansible-Configuration-Management/blob/main/Ansible%20Configuration%20Management/image%201.jpg)
+![database_test](images/test_database.png)
+
+![image 1](images/Ec2_instance png.png)
 
 2. In your GitHub account, create a new repository named `ansible-config-mgt`. This repository will store your Ansible configurations, playbooks, and inventory files.
 
