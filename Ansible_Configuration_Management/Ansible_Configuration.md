@@ -8,7 +8,7 @@
 
 
 
-![image 1](images/Ec2_instance.png)
+![image 1](images/new_repo.png)
 
 
 
